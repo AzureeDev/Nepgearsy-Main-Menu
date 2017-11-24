@@ -21,11 +21,25 @@ function FriendsBoxGui:init(ws, title, text, content_data, config, type)
 	self._online_color = Color(0.6, 0.75, 1)
 	self._offline_color = Color("717171")
 
+	self._options_exists = false
+
+	if NepgearsyMM and NepgearsyMM.Data then
+		self._options_exists = true
+	end
+
 	FriendsBoxGui.super.init(self, ws, title, text, content_data, config)
 
 	self:update_friends()
 	--self:_init_steamapi_infos(Steam:userid()) -- high wip stuff
 	self:set_layer(0)
+end
+
+function FriendsBoxGui:GetOption(option)
+	if not NepgearsyMM and NepgearsyMM.Data then
+		return false
+	end
+
+	return NepgearsyMM.Data[option]
 end
 
 function FriendsBoxGui:_init_steamapi_infos(steam_id)
@@ -193,6 +207,10 @@ function FriendsBoxGui:_create_user(h, user, state, sub_state, level, is_in_lobb
 		name = user:id(),
 	})
 
+	if level == "" or nil then
+		level = "???"
+	end
+
 	local bg_rect = panel:rect({
 		name = "background",
 		color = Color.white,
@@ -245,20 +263,24 @@ function FriendsBoxGui:_create_user(h, user, state, sub_state, level, is_in_lobb
 		name = "user_level",
 		vertical = "center",
 		hvertical = "center",
-		align = "right",
-		halign = "right",
-		text = "",
+		align = "left",
+		halign = "left",
+		text = "REP " .. level,
 		font = self._font,
-		font_size = self._font_size,
+		font_size = self._default_font_size,
 		y = math.round(0),
-		color = color,
-		visible = false
+		x = 6 + avatar:right(),
+		color = Color(0.5, 0.5, 0.5),
+		visible = state == "ingame" and self:GetOption("NepgearsyMM_FriendList_EnableRepLevel_Value") == true
 	})
 	local _, _, sw, sh = user_level:text_rect()
-
 	user_level:set_size(sw, sh)
-	user_level:set_right(math.floor(panel:w()))
 	user_level:set_center_y(math.round(user_name:center_y()))
+
+	self:_make_fine_text(user_level)
+
+	local is_user_level_visible = user_level:visible()
+	user_name:set_x(is_user_level_visible and 10 + user_level:right() or 6 + avatar:right())
 
 	local user_state = panel:text({
 		name = "user_state",

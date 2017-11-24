@@ -92,6 +92,16 @@ MenuCallbackHandler.NepgearsyMM_Scene_Character_Rotation_Callback = function(sel
 	NepgearsyMM:Save()
 end
 
+MenuCallbackHandler.NepgearsyMM_Scene_Light_Selection_Callback = function(self, item)
+	NepgearsyMM.Data.NepgearsyMM_Scene_Light_Selection_Value = item:value()
+	NepgearsyMM:Save()
+end
+
+MenuCallbackHandler.NepgearsyMM_FriendList_EnableRepLevel_Callback = function(self, item)
+	NepgearsyMM.Data.NepgearsyMM_FriendList_EnableRepLevel_Value = (item:value() == "on" and true or false)
+	NepgearsyMM:Save()
+end
+
 NepgearsyMM:Load()
 
 function NepgearsyMM:_init_localization()

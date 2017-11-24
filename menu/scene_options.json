@@ -55,6 +55,25 @@
 		    "max" : 180,
 		    "min" : -180,
 		    "step" : 0.1
+		},
+		{
+			"type" : "divider",
+			"size" : 20
+		},
+		{
+			"type" : "multiple_choice",
+			"id" : "NepgearsyMM_Scene_Light_Selection",
+			"title" : "NepgearsyMM_Scene_Light_Selection_Title",
+			"description" : "NepgearsyMM_Scene_Light_Selection_Desc",
+			"callback" : "NepgearsyMM_Scene_Light_Selection_Callback",
+			"items" : [
+				"NepgearsyMM_Scene_Light_Selection_NMML",
+				"NepgearsyMM_Scene_Light_Selection_Default",
+				"NepgearsyMM_Scene_Light_Selection_Random",
+				"NepgearsyMM_Scene_Light_Selection_None"
+			],
+			"value" : "NepgearsyMM_Scene_Light_Selection_Value",
+			"default_value" : 1
 		}
 	]
 }

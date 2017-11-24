@@ -52,5 +52,27 @@
 	"nepmenu_friendlist_button_invite" : "Einladen",
 	"nepmenu_friendlist_button_send_message" : "Eine Nachricht schicken",
 	"nepmenu_friendlist_button_view_profile" : "Profil anzeigen",
-	"nepmenu_friendlist_button_view_achievements" : "Erfolge ansehen"
+	"nepmenu_friendlist_button_view_achievements" : "Erfolge ansehen",
+
+	"NepgearsyMM_SceneOptions_Title" : "Menu Scene Options",
+	"NepgearsyMM_SceneOptions_Desc" : "Anything related to the scene, such as the character position - rotation, lights...",
+	"NepgearsyMM_Scene_Character_Position_X_Title" : "Position X",
+	"NepgearsyMM_Scene_Character_Position_X_Desc" : "Character position on the X axis"
+	"NepgearsyMM_Scene_Character_Position_Y_Title" : "Position Y",
+	"NepgearsyMM_Scene_Character_Position_Y_Desc" : "Character position on the Y axis"
+	"NepgearsyMM_Scene_Character_Position_Z_Title" : "Position Z",
+	"NepgearsyMM_Scene_Character_Position_Z_Desc" : "Character position on the Z axis",
+	"NepgearsyMM_Scene_Character_Rotation_Title" : "Rotation",
+	"NepgearsyMM_Scene_Character_Rotation_Desc" : "Character rotation",
+	"NepgearsyMM_Scene_Light_Selection_Title" : "Menu Lights",
+	"NepgearsyMM_Scene_Light_Selection_Desc" : "Changes the lights of the main menu.",
+	"NepgearsyMM_Scene_Light_Selection_NMML" : "NMM Lights",
+	"NepgearsyMM_Scene_Light_Selection_Default" : "Default Lights",
+	"NepgearsyMM_Scene_Light_Selection_Random" : "Random Lights",
+	"NepgearsyMM_Scene_Light_Selection_None" : "Normal Light",
+
+	"NepgearsyMM_FriendListOptions_Title" : "Friend List Options",
+	"NepgearsyMM_FriendListOptions_Desc" : "Anything related to the friend list.",
+	"NepgearsyMM_FriendList_EnableRepLevel_Title" : "Enable the reputation levels",
+	"NepgearsyMM_FriendList_EnableRepLevel_Desc" : "This will add the current level of the player before their name. Showing the current infamy is not possible at the moment."
 }
