@@ -97,17 +97,21 @@ function FriendsBoxGui:_create_text_box(ws, title, text, content_data, config)
         vertical = "center",
         name = "ingame_text",
         hvertical = "center",
-        align = "left",
-        halign = "left",
-        text = managers.localization:text("menu_ingame"),
+        align = "center",
+        halign = "center",
+        text = "You are in offline mode.\n\nThe friend list will be there as soon you're back online!",
         font = self._font,
         font_size = self._topic_state_font_size,
-        y = h,
-        color = Color(0.75, 0.75, 0.75)
+        y = 0,
+        x = 3,
+        color = Color(0.75, 0.75, 0.75),
+        visible = not Steam:logged_on()
     })
     local _, _, tw, th = ingame_text:text_rect()
  
     ingame_text:set_size(tw, th)
+    ingame_text:set_center_x(self._canvas:center_x())
+    ingame_text:set_center_y(self._canvas:center_y() - 20)
  
     h = h + th
     local online_text = self._canvas:text({
@@ -120,7 +124,8 @@ function FriendsBoxGui:_create_text_box(ws, title, text, content_data, config)
         font = self._font,
         font_size = self._topic_state_font_size,
         y = h,
-        color = Color(0.75, 0.75, 0.75)
+        color = Color(0.75, 0.75, 0.75),
+        visible = false
     })
     local _, _, tw, th = online_text:text_rect()
  
@@ -137,7 +142,8 @@ function FriendsBoxGui:_create_text_box(ws, title, text, content_data, config)
         font = self._font,
         font_size = self._topic_state_font_size,
         y = h,
-        color = Color(0.75, 0.75, 0.75)
+        color = Color(0.75, 0.75, 0.75),
+        visible = false
     })
     local _, _, tw, th = offline_text:text_rect()
  
@@ -474,6 +480,11 @@ function FriendsBoxGui:mouse_clicked( o, button, x, y )
 end
 
 function FriendsBoxGui:mouse_pressed(button, x, y)
+	
+	if not Steam:logged_on() then
+		return
+	end
+
 	if self._friend_action_gui and self._friend_action_gui:visible() and self._friend_action_gui:in_info_area_focus(x, y) then
 		if button == Idstring("0") or button == Idstring("1") or button == Idstring("2") then
 			local focus_btn_id = self._friend_action_gui:get_focus_button_id()
@@ -595,6 +606,10 @@ function FriendsBoxGui:set_size(x, y)
 	FriendsBoxGui.super.set_size(self, x, y)
 	local friends_panel = self._scroll_panel:child("friends_panel")
 	friends_panel:set_w(self._scroll_panel:w())
+
+	if not Steam:logged_on() then
+		return
+	end
 
 	for _, user_panel in ipairs(self._canvas:children()) do
 		--user_panel:set_w(friends_panel:w())
