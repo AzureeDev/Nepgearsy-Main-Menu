@@ -9,7 +9,7 @@
 		    "id" : "NepgearsyMM_FriendList_EnableRepLevel",
 		    "title" : "NepgearsyMM_FriendList_EnableRepLevel_Title",
 		    "description" : "NepgearsyMM_FriendList_EnableRepLevel_Desc",
-		    "callback" : "NepgearsyMM_FriendList_EnableRepLevel_Callback",
+		    "callback" : "NepgearsyMM_Value_Bool_Callback",
 		    "value" : "NepgearsyMM_FriendList_EnableRepLevel_Value",
 		    "default_value" : false
 		}

@@ -9,7 +9,7 @@
 			"id" : "NepgearsyMM_LanguageSelection",
 			"title" : "NepgearsyMM_LanguageSelection_Title",
 			"description" : "NepgearsyMM_LanguageSelection_Desc",
-			"callback" : "NepgearsyMM_LanguageSelection_Callback",
+			"callback" : "NepgearsyMM_Value_Callback",
 			"items" : [
 				"NepgearsyMM_LanguageSelection_English",
 				"NepgearsyMM_LanguageSelection_German",

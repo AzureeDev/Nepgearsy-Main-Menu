@@ -9,8 +9,9 @@
     "color" : "87 0 173",
     "priority" : 1,
     "updates" : [ { "identifier" : "NepMenu" } ],
+    "pre_hooks": [{"hook_id":"lib/entry", "script_path":"Core.lua"}]
     "hooks":[  
-        {  "hook_id":"lib/managers/menumanager", "script_path":"Core.lua"  },
+        {  "hook_id":"lib/managers/menumanager", "script_path":"Init.lua"  },
         {  "hook_id":"lib/managers/menu/menuscenemanager", "script_path":"lib/MenuSceneManager.lua"  },
         {  "hook_id":"lib/managers/menu/playerprofileguiobject", "script_path":"lib/PlayerProfileGuiObject.lua"  },
         {  "hook_id":"lib/managers/menu/newheistsgui", "script_path":"lib/NewHeistsGui.lua"  },

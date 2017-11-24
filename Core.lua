@@ -14,7 +14,6 @@ NepgearsyMM.Localization[5] = ModPath .. "localization/spanish.txt"
 
 function NepgearsyMM:init()
 	self:_init_icons()
-	self:_init_localization()
 	self:_init_menus()
 
 	self._initialized = true
@@ -61,64 +60,10 @@ function NepgearsyMM:_init_icons()
 	self:log("Loaded all the custom assets!")
 end
 
-MenuCallbackHandler.NepgearsyMM_LanguageSelection_Callback = function(self, item)
-	NepgearsyMM.Data.NepgearsyMM_LanguageSelection_Value = item:value()
-	NepgearsyMM:Save()
-end
-
-MenuCallbackHandler.NepgearsyMM_Scene_Character_Position_X_Callback = function(self, item)
-	NepgearsyMM.Data.NepgearsyMM_Scene_Character_Position_X_Value = item:value()
-	local NHO = NepgearsyMM.Data
-	managers.menu_scene._character_unit:set_position(Vector3(NHO.NepgearsyMM_Scene_Character_Position_X_Value or 5, NHO.NepgearsyMM_Scene_Character_Position_Y_Value or -45, NHO.NepgearsyMM_Scene_Character_Position_Z_Value or -140))
-	NepgearsyMM:Save()
-end
-
-MenuCallbackHandler.NepgearsyMM_Scene_Character_Position_Y_Callback = function(self, item)
-	NepgearsyMM.Data.NepgearsyMM_Scene_Character_Position_Y_Value = item:value()
-	local NHO = NepgearsyMM.Data
-	managers.menu_scene._character_unit:set_position(Vector3(NHO.NepgearsyMM_Scene_Character_Position_X_Value or 5, NHO.NepgearsyMM_Scene_Character_Position_Y_Value or -45, NHO.NepgearsyMM_Scene_Character_Position_Z_Value or -140))
-	NepgearsyMM:Save()
-end
-
-MenuCallbackHandler.NepgearsyMM_Scene_Character_Position_Z_Callback = function(self, item)
-	NepgearsyMM.Data.NepgearsyMM_Scene_Character_Position_Z_Value = item:value()
-	local NHO = NepgearsyMM.Data
-	managers.menu_scene._character_unit:set_position(Vector3(NHO.NepgearsyMM_Scene_Character_Position_X_Value or 5, NHO.NepgearsyMM_Scene_Character_Position_Y_Value or -45, NHO.NepgearsyMM_Scene_Character_Position_Z_Value or -140))
-	NepgearsyMM:Save()
-end
-
-MenuCallbackHandler.NepgearsyMM_Scene_Character_Rotation_Callback = function(self, item)
-	NepgearsyMM.Data.NepgearsyMM_Scene_Character_Rotation_Value = item:value()
-	local NHO = NepgearsyMM.Data
-	managers.menu_scene._character_unit:set_rotation(Rotation(NHO.NepgearsyMM_Scene_Character_Rotation_Value or -170))
-	NepgearsyMM:Save()
-end
-
-MenuCallbackHandler.NepgearsyMM_Scene_Light_Selection_Callback = function(self, item)
-	NepgearsyMM.Data.NepgearsyMM_Scene_Light_Selection_Value = item:value()
-	NepgearsyMM:Save()
-end
-
-MenuCallbackHandler.NepgearsyMM_FriendList_EnableRepLevel_Callback = function(self, item)
-	NepgearsyMM.Data.NepgearsyMM_FriendList_EnableRepLevel_Value = (item:value() == "on" and true or false)
-	NepgearsyMM:Save()
-end
-
 NepgearsyMM:Load()
-
-function NepgearsyMM:_init_localization()
-	Hooks:Add("LocalizationManagerPostInit", "NepMenu_Localization", function(loc)
-		local language_picked = NepgearsyMM.Data["NepgearsyMM_LanguageSelection_Value"] or 1
-		loc:load_localization_file( NepgearsyMM.Localization[language_picked] )
-	end)
-end
 
 function NepgearsyMM:_init_menus()
 	for i, v in ipairs(SystemFS:list(self.MenusDirectory)) do
 		MenuHelper:LoadFromJsonFile(self.MenusDirectory .. v, NepgearsyMM, NepgearsyMM.Data)
 	end
-end
-
-if not NepgearsyMM._initialized then
-	NepgearsyMM:init()
 end
