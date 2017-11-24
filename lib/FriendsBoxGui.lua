@@ -249,7 +249,11 @@ function FriendsBoxGui:_create_user(h, user, state, sub_state, level, is_in_lobb
 
 	user_name:set_size(tw, th)
 
-	local infamy_to_numeral = managers.experience:rank_string(infamy)
+	local infamy_to_numeral = ""
+
+	if infamy > 0 then
+		infamy_to_numeral = managers.experience:rank_string(infamy) .. "-"
+	end
 
 	local user_level = panel:text({
 		name = "user_level",
@@ -257,7 +261,7 @@ function FriendsBoxGui:_create_user(h, user, state, sub_state, level, is_in_lobb
 		hvertical = "center",
 		align = "left",
 		halign = "left",
-		text = "REP " .. level,
+		text = infamy_to_numeral .. level,
 		font = self._font,
 		font_size = self._default_font_size,
 		y = math.round(0),
@@ -364,14 +368,25 @@ function FriendsBoxGui:update_friends()
 	local friends = Steam:friends() or {}
 	
 	for _, user in pairs(friends) do
+
 		local main_state, sub_state = nil
 		local state = user:state()
 		local rich_presence_status = user:rich_presence("status")
 		local rich_presence_level = user:rich_presence("level")
+		local rich_presence_rank = user:rich_presence("infamy") or nil
 		local payday1 = rich_presence_level == ""
 		local playing_this = user:playing_this()
+		local infamy = 0
 
 		local s = string.find(rich_presence_status, "\n")
+
+		if rich_presence_rank == "" or nil then
+			-- Nothing
+		else
+			if tonumber(rich_presence_rank) > 0 then
+				infamy = tonumber(rich_presence_rank)
+			end
+		end
 
 		if s then
 			rich_presence_status = string.gsub(rich_presence_status, "(\n)", ", ")
@@ -410,8 +425,6 @@ function FriendsBoxGui:update_friends()
 		else
 			sub_state = managers.localization:text("nepmenu_friendlist_status_ingame_not_joinable")
 		end
-
-		local infamy = self:_init_api_infamy(user:id())
 
 		self._users[user:id()] = self._users[user:id()] or {}
 		local user_tbl = self._users[user:id()]

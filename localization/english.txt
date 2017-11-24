@@ -7,7 +7,7 @@
 	"NepgearsyMM_LanguageSelection_English" : "English",
 	"NepgearsyMM_LanguageSelection_German" : "Deutsch",
 	"NepgearsyMM_LanguageSelection_Russian" : "Русский",
-    "NepgearsyMM_LanguageSelection_Turkish" : "Turkce",
+	"NepgearsyMM_LanguageSelection_Turkish" : "Turkce",
 	"NepgearsyMM_LanguageSelection_Spanish" : "Español",
 
 	"nepmenu_exp_needed_text" : "$exp EXP NEEDED FOR LEVEL $nextlevel",
