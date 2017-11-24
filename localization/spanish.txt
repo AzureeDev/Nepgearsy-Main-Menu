@@ -1,5 +1,5 @@
 {
-	"NepgearsyMM_Title" : " Opciones  para Nepgearsy Menu",
+	"NepgearsyMM_Title" : " Opciones para Nepgearsy Menu",
 	"NepgearsyMM_Desc" : "Ajusta las preferencias del menú.",
 
 	"NepgearsyMM_LanguageSelection_Title" : "Idioma",
