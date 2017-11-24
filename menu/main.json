@@ -1,0 +1,21 @@
+{
+	"menu_id" : "NepgearsyMM",
+	"parent_menu_id" : "blt_options",
+	"title"	: "NepgearsyMM_Title",
+	"description" : "NepgearsyMM_Desc",
+	"items" : [
+		{
+			"type" : "multiple_choice",
+			"id" : "NepgearsyMM_LanguageSelection",
+			"title" : "NepgearsyMM_LanguageSelection_Title",
+			"description" : "NepgearsyMM_LanguageSelection_Desc",
+			"callback" : "NepgearsyMM_LanguageSelection_Callback",
+			"items" : [
+				"NepgearsyMM_LanguageSelection_English",
+				"NepgearsyMM_LanguageSelection_German"
+			],
+			"value" : "NepgearsyMM_LanguageSelection_Value",
+			"default_value" : 1
+		}
+	]
+}

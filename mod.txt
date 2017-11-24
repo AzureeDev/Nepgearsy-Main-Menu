@@ -1,0 +1,21 @@
+{
+    "name" : "Nepgearsy Main Menu",
+    "description" : "Muh custom main menu.",
+    "author" : "Nepsy",
+    "contact" : "id/Nepgearsy",
+    "version" : "1.2.0",
+    "blt_version" : 2,
+    "image" : "nephud.png",
+    "color" : "87 0 173",
+    "priority" : 1,
+    "updates" : [ { "identifier" : "NepMenu" } ],
+    "hooks":[  
+        {  "hook_id":"lib/managers/menumanager", "script_path":"Core.lua"  },
+        {  "hook_id":"lib/managers/menu/menuscenemanager", "script_path":"lib/MenuSceneManager.lua"  },
+        {  "hook_id":"lib/managers/menu/playerprofileguiobject", "script_path":"lib/PlayerProfileGuiObject.lua"  },
+        {  "hook_id":"lib/managers/menu/newheistsgui", "script_path":"lib/NewHeistsGui.lua"  },
+        {  "hook_id":"lib/managers/menu/menucomponentmanager", "script_path":"lib/MenuComponentManager.lua"  },
+        {  "hook_id":"lib/managers/menu/friendsboxgui", "script_path":"lib/FriendsBoxGui.lua"  },
+        {  "hook_id":"lib/managers/menu/bookboxgui", "script_path":"lib/BookBoxGui.lua"  }
+    ]
+}
