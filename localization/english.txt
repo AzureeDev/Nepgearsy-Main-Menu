@@ -5,8 +5,9 @@
 	"NepgearsyMM_LanguageSelection_Title" : "Language",
 	"NepgearsyMM_LanguageSelection_Desc" : "",
 	"NepgearsyMM_LanguageSelection_English" : "English",
-	"NepgearsyMM_LanguageSelection_German" : "German",
-	"NepgearsyMM_LanguageSelection_Russian" : "Russian",
+	"NepgearsyMM_LanguageSelection_German" : "Deutsch",
+	"NepgearsyMM_LanguageSelection_Russian" : "Русский",
+    "NepgearsyMM_LanguageSelection_Turkish" : "Turkce",
 
 	"nepmenu_exp_needed_text" : "$exp EXP NEEDED FOR LEVEL $nextlevel",
 	"nepmenu_exp_max_level_reached" : "MAX LEVEL REACHED",

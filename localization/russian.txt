@@ -7,6 +7,7 @@
 	"NepgearsyMM_LanguageSelection_English" : "English",
 	"NepgearsyMM_LanguageSelection_German" : "Deutsch",
 	"NepgearsyMM_LanguageSelection_Russian" : "Русский",
+    "NepgearsyMM_LanguageSelection_Turkish" : "Turkce",
 
 	"nepmenu_exp_needed_text" : "$exp опыта необходимо для получения $nextlevel-ого уровня",
 	"nepmenu_exp_max_level_reached" : "ДОСТИГНУТ МАКСИМАЛЬНЫЙ УРОВЕНЬ",

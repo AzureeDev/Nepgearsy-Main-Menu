@@ -9,6 +9,7 @@ NepgearsyMM.Localization = {}
 NepgearsyMM.Localization[1] = ModPath .. "localization/english.txt"
 NepgearsyMM.Localization[2] = ModPath .. "localization/german.txt"
 NepgearsyMM.Localization[3] = ModPath .. "localization/russian.txt"
+NepgearsyMM.Localization[4] = ModPath .. "localization/turkish.txt"
 
 function NepgearsyMM:init()
 	self:_init_icons()

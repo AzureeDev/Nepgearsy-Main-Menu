@@ -13,7 +13,8 @@
 			"items" : [
 				"NepgearsyMM_LanguageSelection_English",
 				"NepgearsyMM_LanguageSelection_German",
-				"NepgearsyMM_LanguageSelection_Russian"
+				"NepgearsyMM_LanguageSelection_Russian",
+				"NepgearsyMM_LanguageSelection_Turkish"
 			],
 			"value" : "NepgearsyMM_LanguageSelection_Value",
 			"default_value" : 1
