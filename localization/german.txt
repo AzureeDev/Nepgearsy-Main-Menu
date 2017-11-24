@@ -6,6 +6,7 @@
 	"NepgearsyMM_LanguageSelection_Desc" : "",
 	"NepgearsyMM_LanguageSelection_English" : "English",
 	"NepgearsyMM_LanguageSelection_German" : "Deutsch",
+	"NepgearsyMM_LanguageSelection_Russian" : "Russian",
 
 	"nepmenu_exp_needed_text" : "$exp BENÖTIGTE XP ZUM LEVEL AUFSTIEG $nextlevel",
 	"nepmenu_exp_max_level_reached" : "MAXIMALES LEVEL ERREICHT",

@@ -1,0 +1,60 @@
+{
+	"menu_id" : "NepgearsyMM_SceneOptions",
+	"parent_menu_id" : "NepgearsyMM",
+	"title"	: "NepgearsyMM_SceneOptions_Title",
+	"description" : "NepgearsyMM_SceneOptions_Desc",
+	"items" : [
+		{
+		    "type" : "slider",
+		    "id" : "NepgearsyMM_Scene_Character_Position_X",
+		    "title" : "NepgearsyMM_Scene_Character_Position_X_Title",
+		    "description" : "NepgearsyMM_Scene_Character_Position_X_Desc",
+		    "callback" : "NepgearsyMM_Scene_Character_Position_X_Callback",
+		    "value" : "NepgearsyMM_Scene_Character_Position_X_Value",
+		    "default_value" : 5,
+		    "max" : 300,
+		    "min" : -300,
+		    "step" : 0.1
+		},
+		{
+		    "type" : "slider",
+		    "id" : "NepgearsyMM_Scene_Character_Position_Y",
+		    "title" : "NepgearsyMM_Scene_Character_Position_Y_Title",
+		    "description" : "NepgearsyMM_Scene_Character_Position_Y_Desc",
+		    "callback" : "NepgearsyMM_Scene_Character_Position_Y_Callback",
+		    "value" : "NepgearsyMM_Scene_Character_Position_Y_Value",
+		    "default_value" : -45,
+		    "max" : 300,
+		    "min" : -300,
+		    "step" : 0.1
+		},
+		{
+		    "type" : "slider",
+		    "id" : "NepgearsyMM_Scene_Character_Position_Z",
+		    "title" : "NepgearsyMM_Scene_Character_Position_Z_Title",
+		    "description" : "NepgearsyMM_Scene_Character_Position_Z_Desc",
+		    "callback" : "NepgearsyMM_Scene_Character_Position_Z_Callback",
+		    "value" : "NepgearsyMM_Scene_Character_Position_Z_Value",
+		    "default_value" : -140,
+		    "max" : 300,
+		    "min" : -300,
+		    "step" : 0.1
+		},
+		{
+			"type" : "divider",
+			"size" : 5
+		},
+		{
+		    "type" : "slider",
+		    "id" : "NepgearsyMM_Scene_Character_Rotation",
+		    "title" : "NepgearsyMM_Scene_Character_Rotation_Title",
+		    "description" : "NepgearsyMM_Scene_Character_Rotation_Desc",
+		    "callback" : "NepgearsyMM_Scene_Character_Rotation_Callback",
+		    "value" : "NepgearsyMM_Scene_Character_Rotation_Value",
+		    "default_value" : -170,
+		    "max" : 180,
+		    "min" : -180,
+		    "step" : 0.1
+		}
+	]
+}

@@ -12,10 +12,15 @@
 			"callback" : "NepgearsyMM_LanguageSelection_Callback",
 			"items" : [
 				"NepgearsyMM_LanguageSelection_English",
-				"NepgearsyMM_LanguageSelection_German"
+				"NepgearsyMM_LanguageSelection_German",
+				"NepgearsyMM_LanguageSelection_Russian"
 			],
 			"value" : "NepgearsyMM_LanguageSelection_Value",
 			"default_value" : 1
+		},
+		{
+			"type" : "divider",
+			"size" : 20
 		}
 	]
 }

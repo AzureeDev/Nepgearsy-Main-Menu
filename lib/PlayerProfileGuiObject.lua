@@ -228,7 +228,13 @@ function PlayerProfileGuiObject:init(ws)
 		color = Color(0.5, 0.5, 0.5)
 	})
 
-	local anticrash_infamy_title = "\"" .. infamy_title[player_rank] .. "\"" or managers.localization:text("nepmenu_infamy_title_hax")
+	local anticrash_infamy_title
+
+	if player_rank > 25 then
+		anticrash_infamy_title = managers.localization:text("nepmenu_infamy_title_hax")
+	else
+		anticrash_infamy_title = "\"" .. infamy_title[player_rank] .. "\""
+	end
 
 	local infamous_title = panel:text({
 		font = font,
@@ -504,7 +510,12 @@ function PlayerProfileGuiObject:init(ws)
 	local total_used = managers.skilltree:get_tree_progress_2("mastermind") + managers.skilltree:get_tree_progress_2("enforcer") + managers.skilltree:get_tree_progress_2("technician") + managers.skilltree:get_tree_progress_2("ghost") + managers.skilltree:get_tree_progress_2("hoxton")
 	skill_points_used_amount:set_left(spendable_money_amount:left())
 	skill_points_used_amount:set_top(offshore_money_amount:bottom())
-	skill_points_used_amount:set_text(total_used .. " / " .. supposed_skillpoint_level[player_level] or 120)
+
+	if player_level > 100 then
+		skill_points_used_amount:set_text(total_used .. " / 120")
+	else
+		skill_points_used_amount:set_text(total_used .. " / " .. supposed_skillpoint_level[player_level] or 120)
+	end
 
 	local skill_icon = panel:bitmap({
 		w = 16,
@@ -523,7 +534,7 @@ function PlayerProfileGuiObject:init(ws)
 		color = Color.white,
 		visible = false
 	})
-	
+
 	skill_icon:set_left(skill_points_used_amount:right() + 60)
 	skill_icon:set_top(offshore_money_amount:bottom())
 	skill_point_unused:set_left(skill_icon:right() + 5)

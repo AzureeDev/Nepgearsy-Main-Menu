@@ -1,6 +1,8 @@
 Hooks:PostHook( MenuSceneManager, "_set_up_templates", "nepmenu_setup_templates", function(self)
-	self._scene_templates.standard.character_pos = Vector3(5, -45, -140)
-	self._scene_templates.standard.character_rot = -170
+
+	local NHO = NepgearsyMM.Data
+	self._scene_templates.standard.character_pos = Vector3(NHO.NepgearsyMM_Scene_Character_Position_X_Value or 5, NHO.NepgearsyMM_Scene_Character_Position_Y_Value or -45, NHO.NepgearsyMM_Scene_Character_Position_Z_Value or -140)
+	self._scene_templates.standard.character_rot = NHO.NepgearsyMM_Scene_Character_Rotation_Value or -170
 	self._scene_templates.standard.hide_menu_logo = true
 
 	self._scene_templates.standard.use_character_grab = false
@@ -68,9 +70,15 @@ Hooks:PostHook( MenuSceneManager, "set_scene_template", "nepmenu_set_scene_templ
 
 	if not skip_transition then
 		template_data = data or self._scene_templates[template]
+		local template_data_standard = self._scene_templates.standard
+		local NHO = NepgearsyMM.Data
+
+		--if template_data.character_pos then
+		--	self._character_unit:set_position(Vector3(NHO.NepgearsyMM_Scene_Character_Position_X_Value or 5, NHO.NepgearsyMM_Scene_Character_Position_Y_Value or -45, NHO.NepgearsyMM_Scene_Character_Position_Z_Value or -140))
+		--end
 
 		if template_data.character_rot then
-			self._character_unit:set_rotation(Rotation(template_data.character_rot, self._character_pitch))
+			self._character_unit:set_rotation(Rotation(NHO.NepgearsyMM_Scene_Character_Rotation_Value or -170, self._character_pitch))
             self._character_yaw = template_data.character_rot
 		end
 	end
