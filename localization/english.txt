@@ -8,6 +8,7 @@
 	"NepgearsyMM_LanguageSelection_German" : "Deutsch",
 	"NepgearsyMM_LanguageSelection_Russian" : "Русский",
     "NepgearsyMM_LanguageSelection_Turkish" : "Turkce",
+	"NepgearsyMM_LanguageSelection_Spanish" : "Español",
 
 	"nepmenu_exp_needed_text" : "$exp EXP NEEDED FOR LEVEL $nextlevel",
 	"nepmenu_exp_max_level_reached" : "MAX LEVEL REACHED",
@@ -58,9 +59,9 @@
 	"NepgearsyMM_SceneOptions_Title" : "Menu Scene Options",
 	"NepgearsyMM_SceneOptions_Desc" : "Anything related to the scene, such as the character position - rotation, lights...",
 	"NepgearsyMM_Scene_Character_Position_X_Title" : "Position X",
-	"NepgearsyMM_Scene_Character_Position_X_Desc" : "Character position on the X axis"
+	"NepgearsyMM_Scene_Character_Position_X_Desc" : "Character position on the X axis",
 	"NepgearsyMM_Scene_Character_Position_Y_Title" : "Position Y",
-	"NepgearsyMM_Scene_Character_Position_Y_Desc" : "Character position on the Y axis"
+	"NepgearsyMM_Scene_Character_Position_Y_Desc" : "Character position on the Y axis",
 	"NepgearsyMM_Scene_Character_Position_Z_Title" : "Position Z",
 	"NepgearsyMM_Scene_Character_Position_Z_Desc" : "Character position on the Z axis",
 	"NepgearsyMM_Scene_Character_Rotation_Title" : "Rotation",

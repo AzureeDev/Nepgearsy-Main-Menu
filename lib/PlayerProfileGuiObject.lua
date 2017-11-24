@@ -544,17 +544,17 @@ function PlayerProfileGuiObject:init(ws)
 		local function animate_new_skillpoints(o)
 			while true do
 				over(1, function (p)
-					o:set_alpha(math.lerp(0.4, 0.85, math.sin(p * 180)))
+					o:set_alpha(math.lerp(0.2, 1, math.sin(p * 180)))
 				end)
 			end
 		end
 
 		skill_point_unused:set_visible(true)
 		skill_point_unused:animate(animate_new_skillpoints)
-		skill_point_unused:set_color(Color(1, 0.55, 0.1))
+		skill_point_unused:set_color(Color(1, 0.75, 0))
 		skill_icon:set_visible(true)
 		skill_icon:animate(animate_new_skillpoints)
-		skill_icon:set_color(Color(1, 0.55, 0.1))
+		skill_icon:set_color(Color(1, 0.75, 0))
 	end
 
 	self:_rec_round_object(panel)
