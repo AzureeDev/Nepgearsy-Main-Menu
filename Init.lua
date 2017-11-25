@@ -17,7 +17,8 @@ function MenuCallbackHandler:NepgearsyMM_Value_Callback(item)
 end
 
 function MenuCallbackHandler:NepgearsyMM_Value_Bool_Callback(item)
-	NepgearsyMM.Data.NepgearsyMM_FriendList_EnableRepLevel_Value = item:value() == "on"
-	NepgearsyMM.Data.NepgearsyMM_Misc_LinuxSupport_Value = item:value() == "on"
+	local name = item._parameters.name
+	local NHO = NepgearsyMM.Data
+	NHO[name.."_Value"] = item:value() == "on"
 	NepgearsyMM:Save()
 end

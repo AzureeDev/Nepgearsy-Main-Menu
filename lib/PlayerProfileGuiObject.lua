@@ -297,7 +297,7 @@ function PlayerProfileGuiObject:init(ws)
 	fugitive_points:set_center_x(fugitive_icon:center_x() - 2)
 	fugitive_points:set_text(managers.skilltree:get_tree_progress_2("hoxton"))
 
-	if NepgearsyMM.LINUX and NepgearsyMM.Data["NepgearsyMM_Misc_LinuxSupport_Value"] then
+	if NepgearsyMM.LINUX then
 
 		local mastermind_xy = { 4, 9 }
 		local enforcer_xy = { 8, 10 }
