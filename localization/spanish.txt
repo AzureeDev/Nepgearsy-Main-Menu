@@ -76,5 +76,10 @@
 	"NepgearsyMM_FriendListOptions_Title" : "Opciones de la Lista de Amigos",
 	"NepgearsyMM_FriendListOptions_Desc" : "Todo lo relacionado con la lista de amigos.",
 	"NepgearsyMM_FriendList_EnableRepLevel_Title" : "Habilitar los niveles de Reputación",
-	"NepgearsyMM_FriendList_EnableRepLevel_Desc" : "Esto añadirá el nivel actual de un jugador antes de su nombre. Mostrar su nivel de infamia no es posible en este momento."
+	"NepgearsyMM_FriendList_EnableRepLevel_Desc" : "Esto añadirá el nivel actual de un jugador antes de su nombre. Mostrar su nivel de infamia no es posible en este momento.",
+
+	"NepgearsyMM_MiscOptions_Title" : "Misc",
+	"NepgearsyMM_MiscOptions_Desc" : "Various options",
+	"NepgearsyMM_Misc_LinuxSupport_Title" : "Enable Linux Support",
+	"NepgearsyMM_Misc_LinuxSupport_Desc" : "Enabling this will disable the custom icons and the usage of functions such as SystemFS. If you are on windows, do not check this option."
 }

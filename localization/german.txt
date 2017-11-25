@@ -76,5 +76,10 @@
 	"NepgearsyMM_FriendListOptions_Title" : "Friend List Options",
 	"NepgearsyMM_FriendListOptions_Desc" : "Anything related to the friend list.",
 	"NepgearsyMM_FriendList_EnableRepLevel_Title" : "Enable the reputation levels",
-	"NepgearsyMM_FriendList_EnableRepLevel_Desc" : "This will add the current level of the player before their name. Showing the current infamy is not possible at the moment."
+	"NepgearsyMM_FriendList_EnableRepLevel_Desc" : "This will add the current level of the player before their name. Showing the current infamy is not possible at the moment.",
+
+	"NepgearsyMM_MiscOptions_Title" : "Misc",
+	"NepgearsyMM_MiscOptions_Desc" : "Various options",
+	"NepgearsyMM_Misc_LinuxSupport_Title" : "Enable Linux Support",
+	"NepgearsyMM_Misc_LinuxSupport_Desc" : "Enabling this will disable the custom icons and the usage of functions such as SystemFS. If you are on windows, do not check this option."
 }

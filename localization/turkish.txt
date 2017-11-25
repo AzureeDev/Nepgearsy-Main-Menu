@@ -76,5 +76,10 @@
     "NepgearsyMM_FriendListOptions_Title" : "Arkadas Listesi Ayarlari",
     "NepgearsyMM_FriendListOptions_Desc" : "Arkadas listesi ile alakali seyler",
     "NepgearsyMM_FriendList_EnableRepLevel_Title" : "Seviye Gostergesini Aktif Et",
-    "NepgearsyMM_FriendList_EnableRepLevel_Desc" : "Oyuncularin yanina seviyelerini gosteren panel ekler. Infamy gostermek ne yazik ki mumkun degil."
+    "NepgearsyMM_FriendList_EnableRepLevel_Desc" : "Oyuncularin yanina seviyelerini gosteren panel ekler. Infamy gostermek ne yazik ki mumkun degil.",
+
+    "NepgearsyMM_MiscOptions_Title" : "Misc",
+    "NepgearsyMM_MiscOptions_Desc" : "Various options",
+    "NepgearsyMM_Misc_LinuxSupport_Title" : "Enable Linux Support",
+    "NepgearsyMM_Misc_LinuxSupport_Desc" : "Enabling this will disable the custom icons and the usage of functions such as SystemFS. If you are on windows, do not check this option."
 }

@@ -1,0 +1,17 @@
+{
+	"menu_id" : "NepgearsyMM_MiscOptions",
+	"parent_menu_id" : "NepgearsyMM",
+	"title"	: "NepgearsyMM_MiscOptions_Title",
+	"description" : "NepgearsyMM_MiscOptions_Desc",
+	"items" : [
+		{
+		    "type" : "toggle",
+		    "id" : "NepgearsyMM_Misc_LinuxSupport",
+		    "title" : "NepgearsyMM_Misc_LinuxSupport_Title",
+		    "description" : "NepgearsyMM_Misc_LinuxSupport_Desc",
+		    "callback" : "NepgearsyMM_Value_Bool_Callback",
+		    "value" : "NepgearsyMM_Misc_LinuxSupport_Value",
+		    "default_value" : false
+		}
+	]
+}

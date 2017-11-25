@@ -14,113 +14,12 @@ function PlayerProfileGuiObject:init(ws)
 	end )
 
 	local infamy_title = {}
-	
+
 	for i = 0, 25 do
 		infamy_title[i] = managers.localization:text("nepmenu_infamy_title_" .. i)
 	end
 
-	local supposed_skillpoint_level = {}
-	supposed_skillpoint_level[0] = 0
-	supposed_skillpoint_level[1] = 1
-	supposed_skillpoint_level[2] = 2
-	supposed_skillpoint_level[3] = 3
-	supposed_skillpoint_level[4] = 4
-	supposed_skillpoint_level[5] = 5
-	supposed_skillpoint_level[6] = 6
-	supposed_skillpoint_level[7] = 7
-	supposed_skillpoint_level[8] = 8
-	supposed_skillpoint_level[9] = 9
-	supposed_skillpoint_level[10] = 12
-	supposed_skillpoint_level[11] = 13
-	supposed_skillpoint_level[12] = 14
-	supposed_skillpoint_level[13] = 15
-	supposed_skillpoint_level[14] = 16
-	supposed_skillpoint_level[15] = 17
-	supposed_skillpoint_level[16] = 18
-	supposed_skillpoint_level[17] = 19
-	supposed_skillpoint_level[18] = 20
-	supposed_skillpoint_level[19] = 21
-	supposed_skillpoint_level[20] = 24
-	supposed_skillpoint_level[21] = 25
-	supposed_skillpoint_level[22] = 26
-	supposed_skillpoint_level[23] = 27
-	supposed_skillpoint_level[24] = 28
-	supposed_skillpoint_level[25] = 29
-	supposed_skillpoint_level[26] = 30
-	supposed_skillpoint_level[27] = 31
-	supposed_skillpoint_level[28] = 32
-	supposed_skillpoint_level[29] = 33
-	supposed_skillpoint_level[30] = 36
-	supposed_skillpoint_level[31] = 37
-	supposed_skillpoint_level[32] = 38
-	supposed_skillpoint_level[33] = 39
-	supposed_skillpoint_level[34] = 40
-	supposed_skillpoint_level[35] = 41
-	supposed_skillpoint_level[36] = 42
-	supposed_skillpoint_level[37] = 43
-	supposed_skillpoint_level[38] = 44
-	supposed_skillpoint_level[39] = 45
-	supposed_skillpoint_level[40] = 48
-	supposed_skillpoint_level[41] = 49
-	supposed_skillpoint_level[42] = 50
-	supposed_skillpoint_level[43] = 51
-	supposed_skillpoint_level[44] = 52
-	supposed_skillpoint_level[45] = 53
-	supposed_skillpoint_level[46] = 54
-	supposed_skillpoint_level[47] = 55
-	supposed_skillpoint_level[48] = 56
-	supposed_skillpoint_level[49] = 57
-	supposed_skillpoint_level[50] = 60
-	supposed_skillpoint_level[51] = 61
-	supposed_skillpoint_level[52] = 62
-	supposed_skillpoint_level[53] = 63
-	supposed_skillpoint_level[54] = 64
-	supposed_skillpoint_level[55] = 65
-	supposed_skillpoint_level[56] = 66
-	supposed_skillpoint_level[57] = 67
-	supposed_skillpoint_level[58] = 68
-	supposed_skillpoint_level[59] = 69
-	supposed_skillpoint_level[60] = 72
-	supposed_skillpoint_level[61] = 73
-	supposed_skillpoint_level[62] = 74
-	supposed_skillpoint_level[63] = 75
-	supposed_skillpoint_level[64] = 76
-	supposed_skillpoint_level[65] = 77
-	supposed_skillpoint_level[66] = 78
-	supposed_skillpoint_level[67] = 79
-	supposed_skillpoint_level[68] = 80
-	supposed_skillpoint_level[69] = 81
-	supposed_skillpoint_level[70] = 84
-	supposed_skillpoint_level[71] = 85
-	supposed_skillpoint_level[72] = 86
-	supposed_skillpoint_level[73] = 87
-	supposed_skillpoint_level[74] = 88
-	supposed_skillpoint_level[75] = 89
-	supposed_skillpoint_level[76] = 90
-	supposed_skillpoint_level[77] = 91
-	supposed_skillpoint_level[78] = 92
-	supposed_skillpoint_level[79] = 93
-	supposed_skillpoint_level[80] = 96
-	supposed_skillpoint_level[81] = 97
-	supposed_skillpoint_level[82] = 98
-	supposed_skillpoint_level[83] = 99
-	supposed_skillpoint_level[84] = 100
-	supposed_skillpoint_level[85] = 101
-	supposed_skillpoint_level[86] = 102
-	supposed_skillpoint_level[87] = 103
-	supposed_skillpoint_level[88] = 104
-	supposed_skillpoint_level[89] = 105
-	supposed_skillpoint_level[90] = 108
-	supposed_skillpoint_level[91] = 109
-	supposed_skillpoint_level[92] = 110
-	supposed_skillpoint_level[93] = 111
-	supposed_skillpoint_level[94] = 112
-	supposed_skillpoint_level[95] = 113
-	supposed_skillpoint_level[96] = 114
-	supposed_skillpoint_level[97] = 115
-	supposed_skillpoint_level[98] = 116
-	supposed_skillpoint_level[99] = 117
-	supposed_skillpoint_level[100] = 120
+	self:_init_supposed_skill_points()
 
 	local next_level_data = managers.experience:next_level_data() or {}
 	local s_current_xp = next_level_data.current_points or 1
@@ -261,7 +160,7 @@ function PlayerProfileGuiObject:init(ws)
 
 	equipped_perkdeck:set_top(current_xp:bottom())
 	equipped_perkdeck:set_left(panel:right() - 64)
-	
+
 	level_text:set_left(myavatar:right() + 10)
 	level_text:set_top(myavatar:top())
 
@@ -282,7 +181,7 @@ function PlayerProfileGuiObject:init(ws)
 		w = 35,
 		x = 35,
 		y = 10
-	}) 
+	})
 	local mastermind_points = panel:text({
 		name = "mastermind_points",
 		font = font,
@@ -397,6 +296,55 @@ function PlayerProfileGuiObject:init(ws)
 	fugitive_points:set_top(fugitive_icon:bottom() + 5)
 	fugitive_points:set_center_x(fugitive_icon:center_x() - 2)
 	fugitive_points:set_text(managers.skilltree:get_tree_progress_2("hoxton"))
+
+	if NepgearsyMM.LINUX and NepgearsyMM.Data["NepgearsyMM_Misc_LinuxSupport_Value"] then
+
+		local mastermind_xy = { 4, 9 }
+		local enforcer_xy = { 8, 10 }
+		local technician_xy = { 9, 6 }
+		local ghost_xy = { 5, 9 }
+		local fugitive_xy = { 1, 12 }
+
+		mastermind_icon:set_image("guis/textures/pd2/skilltree_2/icons_atlas_2")
+		mastermind_icon:set_texture_rect(
+			mastermind_xy[1] * 80,
+			mastermind_xy[2] * 80,
+			80,
+			80
+		)
+
+		enforcer_icon:set_image("guis/textures/pd2/skilltree_2/icons_atlas_2")
+		enforcer_icon:set_texture_rect(
+			enforcer_xy[1] * 80,
+			enforcer_xy[2] * 80,
+			80,
+			80
+		)
+
+		technician_icon:set_image("guis/textures/pd2/skilltree_2/icons_atlas_2")
+		technician_icon:set_texture_rect(
+			technician_xy[1] * 80,
+			technician_xy[2] * 80,
+			80,
+			80
+		)
+
+		ghost_icon:set_image("guis/textures/pd2/skilltree_2/icons_atlas_2")
+		ghost_icon:set_texture_rect(
+			ghost_xy[1] * 80,
+			ghost_xy[2] * 80,
+			80,
+			80
+		)
+
+		fugitive_icon:set_image("guis/textures/pd2/skilltree_2/icons_atlas_2")
+		fugitive_icon:set_texture_rect(
+			fugitive_xy[1] * 80,
+			fugitive_xy[2] * 80,
+			80,
+			80
+		)
+	end
 
 	if managers.skilltree:get_tree_progress_2("mastermind") >= 30 then
 		mastermind_icon:set_color(Color(1, 1, 0))
@@ -514,7 +462,7 @@ function PlayerProfileGuiObject:init(ws)
 	if player_level > 100 then
 		skill_points_used_amount:set_text(total_used .. " / 120")
 	else
-		skill_points_used_amount:set_text(total_used .. " / " .. supposed_skillpoint_level[player_level] or 120)
+		skill_points_used_amount:set_text(total_used .. " / " .. self.supposed_skillpoint_level[player_level] or 120)
 	end
 
 	local skill_icon = panel:bitmap({
@@ -562,4 +510,109 @@ function PlayerProfileGuiObject:init(ws)
 	DelayedCalls:Add( "AntiCrash_CreateFriendList", 0.05, function()
     	managers.menu_component:create_friends_gui()
 	end )
+end
+
+function PlayerProfileGuiObject:_init_supposed_skill_points()
+	self.supposed_skillpoint_level = {}
+	self.supposed_skillpoint_level[0] = 0
+	self.supposed_skillpoint_level[1] = 1
+	self.supposed_skillpoint_level[2] = 2
+	self.supposed_skillpoint_level[3] = 3
+	self.supposed_skillpoint_level[4] = 4
+	self.supposed_skillpoint_level[5] = 5
+	self.supposed_skillpoint_level[6] = 6
+	self.supposed_skillpoint_level[7] = 7
+	self.supposed_skillpoint_level[8] = 8
+	self.supposed_skillpoint_level[9] = 9
+	self.supposed_skillpoint_level[10] = 12
+	self.supposed_skillpoint_level[11] = 13
+	self.supposed_skillpoint_level[12] = 14
+	self.supposed_skillpoint_level[13] = 15
+	self.supposed_skillpoint_level[14] = 16
+	self.supposed_skillpoint_level[15] = 17
+	self.supposed_skillpoint_level[16] = 18
+	self.supposed_skillpoint_level[17] = 19
+	self.supposed_skillpoint_level[18] = 20
+	self.supposed_skillpoint_level[19] = 21
+	self.supposed_skillpoint_level[20] = 24
+	self.supposed_skillpoint_level[21] = 25
+	self.supposed_skillpoint_level[22] = 26
+	self.supposed_skillpoint_level[23] = 27
+	self.supposed_skillpoint_level[24] = 28
+	self.supposed_skillpoint_level[25] = 29
+	self.supposed_skillpoint_level[26] = 30
+	self.supposed_skillpoint_level[27] = 31
+	self.supposed_skillpoint_level[28] = 32
+	self.supposed_skillpoint_level[29] = 33
+	self.supposed_skillpoint_level[30] = 36
+	self.supposed_skillpoint_level[31] = 37
+	self.supposed_skillpoint_level[32] = 38
+	self.supposed_skillpoint_level[33] = 39
+	self.supposed_skillpoint_level[34] = 40
+	self.supposed_skillpoint_level[35] = 41
+	self.supposed_skillpoint_level[36] = 42
+	self.supposed_skillpoint_level[37] = 43
+	self.supposed_skillpoint_level[38] = 44
+	self.supposed_skillpoint_level[39] = 45
+	self.supposed_skillpoint_level[40] = 48
+	self.supposed_skillpoint_level[41] = 49
+	self.supposed_skillpoint_level[42] = 50
+	self.supposed_skillpoint_level[43] = 51
+	self.supposed_skillpoint_level[44] = 52
+	self.supposed_skillpoint_level[45] = 53
+	self.supposed_skillpoint_level[46] = 54
+	self.supposed_skillpoint_level[47] = 55
+	self.supposed_skillpoint_level[48] = 56
+	self.supposed_skillpoint_level[49] = 57
+	self.supposed_skillpoint_level[50] = 60
+	self.supposed_skillpoint_level[51] = 61
+	self.supposed_skillpoint_level[52] = 62
+	self.supposed_skillpoint_level[53] = 63
+	self.supposed_skillpoint_level[54] = 64
+	self.supposed_skillpoint_level[55] = 65
+	self.supposed_skillpoint_level[56] = 66
+	self.supposed_skillpoint_level[57] = 67
+	self.supposed_skillpoint_level[58] = 68
+	self.supposed_skillpoint_level[59] = 69
+	self.supposed_skillpoint_level[60] = 72
+	self.supposed_skillpoint_level[61] = 73
+	self.supposed_skillpoint_level[62] = 74
+	self.supposed_skillpoint_level[63] = 75
+	self.supposed_skillpoint_level[64] = 76
+	self.supposed_skillpoint_level[65] = 77
+	self.supposed_skillpoint_level[66] = 78
+	self.supposed_skillpoint_level[67] = 79
+	self.supposed_skillpoint_level[68] = 80
+	self.supposed_skillpoint_level[69] = 81
+	self.supposed_skillpoint_level[70] = 84
+	self.supposed_skillpoint_level[71] = 85
+	self.supposed_skillpoint_level[72] = 86
+	self.supposed_skillpoint_level[73] = 87
+	self.supposed_skillpoint_level[74] = 88
+	self.supposed_skillpoint_level[75] = 89
+	self.supposed_skillpoint_level[76] = 90
+	self.supposed_skillpoint_level[77] = 91
+	self.supposed_skillpoint_level[78] = 92
+	self.supposed_skillpoint_level[79] = 93
+	self.supposed_skillpoint_level[80] = 96
+	self.supposed_skillpoint_level[81] = 97
+	self.supposed_skillpoint_level[82] = 98
+	self.supposed_skillpoint_level[83] = 99
+	self.supposed_skillpoint_level[84] = 100
+	self.supposed_skillpoint_level[85] = 101
+	self.supposed_skillpoint_level[86] = 102
+	self.supposed_skillpoint_level[87] = 103
+	self.supposed_skillpoint_level[88] = 104
+	self.supposed_skillpoint_level[89] = 105
+	self.supposed_skillpoint_level[90] = 108
+	self.supposed_skillpoint_level[91] = 109
+	self.supposed_skillpoint_level[92] = 110
+	self.supposed_skillpoint_level[93] = 111
+	self.supposed_skillpoint_level[94] = 112
+	self.supposed_skillpoint_level[95] = 113
+	self.supposed_skillpoint_level[96] = 114
+	self.supposed_skillpoint_level[97] = 115
+	self.supposed_skillpoint_level[98] = 116
+	self.supposed_skillpoint_level[99] = 117
+	self.supposed_skillpoint_level[100] = 120
 end
