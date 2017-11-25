@@ -11,8 +11,12 @@ function MenuCallbackHandler:NepgearsyMM_Value_Callback(item)
 	local name = item._parameters.name
 	local NHO = NepgearsyMM.Data
 	NHO[name.."_Value"] = item:value()
-	managers.menu_scene._character_unit:set_position(Vector3(NHO.NepgearsyMM_Scene_Character_Position_X_Value or 5, NHO.NepgearsyMM_Scene_Character_Position_Y_Value or -45, NHO.NepgearsyMM_Scene_Character_Position_Z_Value or -140))
-	managers.menu_scene._character_unit:set_rotation(Rotation(NHO.NepgearsyMM_Scene_Character_Rotation_Value or -170))
+
+	if managers and managers.menu_scene then
+		managers.menu_scene._character_unit:set_position(Vector3(NHO.NepgearsyMM_Scene_Character_Position_X_Value or 5, NHO.NepgearsyMM_Scene_Character_Position_Y_Value or -45, NHO.NepgearsyMM_Scene_Character_Position_Z_Value or -140))
+		managers.menu_scene._character_unit:set_rotation(Rotation(NHO.NepgearsyMM_Scene_Character_Rotation_Value or -170))
+	end
+	
 	NepgearsyMM:Save()
 end
 
