@@ -61,7 +61,7 @@ function NepgearsyMM:_check_is_linux()
 end
 
 function NepgearsyMM:create_texture_entry(texture_path_ingame, texture_path_inmod)
-	if self.LINUX and NepgearsyMM.Data["NepgearsyMM_Misc_LinuxSupport_Value"] then
+	if self.LINUX then
 		return
 	end
 
@@ -70,7 +70,7 @@ function NepgearsyMM:create_texture_entry(texture_path_ingame, texture_path_inmo
 end
 
 function NepgearsyMM:_init_icons()
-	if self.LINUX and NepgearsyMM.Data["NepgearsyMM_Misc_LinuxSupport_Value"] then
+	if self.LINUX then
 		return
 	end
 
@@ -88,7 +88,6 @@ function NepgearsyMM:_init_menus()
 		MenuHelper:LoadFromJsonFile(self.MenusDirectory .. "0_main.json", NepgearsyMM, NepgearsyMM.Data)
 		MenuHelper:LoadFromJsonFile(self.MenusDirectory .. "friendlist_options.json", NepgearsyMM, NepgearsyMM.Data)
 		MenuHelper:LoadFromJsonFile(self.MenusDirectory .. "scene_options.json", NepgearsyMM, NepgearsyMM.Data)
-		MenuHelper:LoadFromJsonFile(self.MenusDirectory .. "z_misc_options.json", NepgearsyMM, NepgearsyMM.Data)
 		return
 	end
 
