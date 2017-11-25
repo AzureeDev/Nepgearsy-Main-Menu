@@ -3,14 +3,14 @@
     "description" : "Muh custom main menu.",
     "author" : "Nepsy",
     "contact" : "id/Nepgearsy",
-    "version" : "1.3.0",
+    "version" : "1.4.0",
     "blt_version" : 2,
     "image" : "nephud.png",
     "color" : "87 0 173",
     "priority" : 1,
     "updates" : [ { "identifier" : "NepMenu" } ],
     "pre_hooks": [{"hook_id":"lib/entry", "script_path":"Core.lua"}]
-    "hooks":[  
+    "hooks":[
         {  "hook_id":"lib/managers/menumanager", "script_path":"Init.lua"  },
         {  "hook_id":"lib/managers/menu/menuscenemanager", "script_path":"lib/MenuSceneManager.lua"  },
         {  "hook_id":"lib/managers/menu/playerprofileguiobject", "script_path":"lib/PlayerProfileGuiObject.lua"  },
