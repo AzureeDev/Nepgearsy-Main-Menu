@@ -72,6 +72,8 @@
     "NepgearsyMM_Scene_Light_Selection_Default" : "Varsayilan Isiklar",
     "NepgearsyMM_Scene_Light_Selection_Random" : "Rastgele Isiklar",
     "NepgearsyMM_Scene_Light_Selection_None" : "Normal Isiklar",
+    "NepgearsyMM_Scene_DisableLightsChanges_Title" : "Disable the light changes",
+	"NepgearsyMM_Scene_DisableLightsChanges_Desc" : "This will disable the changes on lights completely.",
 
     "NepgearsyMM_FriendListOptions_Title" : "Arkadas Listesi Ayarlari",
     "NepgearsyMM_FriendListOptions_Desc" : "Arkadas listesi ile alakali seyler",

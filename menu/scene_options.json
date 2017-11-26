@@ -74,6 +74,15 @@
 			],
 			"value" : "NepgearsyMM_Scene_Light_Selection_Value",
 			"default_value" : 1
+		},
+		{
+			"type" : "toggle",
+			"id" : "NepgearsyMM_Scene_DisableLightsChanges",
+			"title" : "NepgearsyMM_Scene_DisableLightsChanges_Title",
+			"description" : "NepgearsyMM_Scene_DisableLightsChanges_Desc",
+			"callback" : "NepgearsyMM_Value_Bool_Callback",
+			"value" : "NepgearsyMM_Scene_DisableLightsChanges_Value",
+			"default_value" : false
 		}
 	]
 }

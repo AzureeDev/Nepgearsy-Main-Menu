@@ -217,7 +217,7 @@ function PlayerProfileGuiObject:init(ws)
 	local texture_rect_x = 0
 	local texture_rect_y = 0
 	local specialization_data = tweak_data.skilltree.specializations[current_specialization]
-	local specialization_text = specialization_data and managers.localization:text(specialization_data.name_id) or " "
+	local specialization_text = ""
 
 	local guis_catalog = "guis/"
 	if specialization_data then
@@ -233,7 +233,7 @@ function PlayerProfileGuiObject:init(ws)
 				guis_catalog = guis_catalog .. "dlcs/" .. tostring(tier_data.texture_bundle_folder) .. "/"
 			end
 
-			specialization_text = specialization_text .. "\n" .. tostring(current_tier) .. "/" .. tostring(max_tier) .. ""
+			specialization_text = tostring(current_tier) .. "/" .. tostring(max_tier)
 		end
 	end
 
@@ -390,7 +390,7 @@ function PlayerProfileGuiObject:init(ws)
 	})
 	self:_make_fine_text(perkdeck_infos)
 
-	perkdeck_infos:set_top(equipped_perkdeck:bottom() - 5)
+	perkdeck_infos:set_top(fugitive_points:top() + 1)
 	perkdeck_infos:set_center_x(equipped_perkdeck:center_x())
 
 	if not NepgearsyMM.CAN_ADD_FILES then

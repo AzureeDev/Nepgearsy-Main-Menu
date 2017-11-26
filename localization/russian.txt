@@ -72,6 +72,8 @@
 	"NepgearsyMM_Scene_Light_Selection_Default" : "Стандартный свет",
 	"NepgearsyMM_Scene_Light_Selection_Random" : "Случайный свет",
 	"NepgearsyMM_Scene_Light_Selection_None" : "Нормальный свет",
+	"NepgearsyMM_Scene_DisableLightsChanges_Title" : "Disable the light changes",
+	"NepgearsyMM_Scene_DisableLightsChanges_Desc" : "This will disable the changes on lights completely.",
 
 	"NepgearsyMM_FriendListOptions_Title" : "Настройки списка друзей",
 	"NepgearsyMM_FriendListOptions_Desc" : "Всё что со списком друзей.",
