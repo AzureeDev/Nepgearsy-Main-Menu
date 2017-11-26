@@ -4,8 +4,6 @@ NepgearsyMM.SavePath = SavePath .. "NepgearsyMM_Preferences.txt"
 NepgearsyMM.AssetsDirectory = ModPath .. "assets/NepgearsyMM/"
 NepgearsyMM.SoftAssetsDirectory = "assets/NepgearsyMM/"
 NepgearsyMM.MenusDirectory = ModPath .. "menu/"
-NepgearsyMM.OS = os.getenv('OS')
-NepgearsyMM.LINUX = false
 NepgearsyMM.Data = {}
 NepgearsyMM.Localization = {}
 NepgearsyMM.Localization[1] = ModPath .. "localization/english.txt"
@@ -14,11 +12,15 @@ NepgearsyMM.Localization[3] = ModPath .. "localization/russian.txt"
 NepgearsyMM.Localization[4] = ModPath .. "localization/turkish.txt"
 NepgearsyMM.Localization[5] = ModPath .. "localization/spanish.txt"
 
+NepgearsyMM.CAN_ADD_FILES = false
+NepgearsyMM.CAN_USE_SYSTEMFS = false
+
 function NepgearsyMM:init()
-	self:_check_is_linux()
+	self:_check_special_variables()
 	self:Load()
 	self:_init_icons()
 	self:_init_menus()
+	self:_check_other_mods()
 
 	self._initialized = true
 	self:log("init() finished!")
@@ -51,17 +53,18 @@ function NepgearsyMM:Save()
 	end
 end
 
-function NepgearsyMM:_check_is_linux()
-	if self.OS and self.OS ~= nil then
-		return false
+function NepgearsyMM:_check_special_variables()
+	if DB.create_entry then
+		self.CAN_ADD_FILES = true
 	end
 
-	self.LINUX = true
-	return true
+	if SystemFS and SystemFS.list then
+		self.CAN_USE_SYSTEMFS = true
+	end
 end
 
 function NepgearsyMM:create_texture_entry(texture_path_ingame, texture_path_inmod)
-	if self.LINUX then
+	if not self.CAN_ADD_FILES then
 		return
 	end
 
@@ -70,7 +73,7 @@ function NepgearsyMM:create_texture_entry(texture_path_ingame, texture_path_inmo
 end
 
 function NepgearsyMM:_init_icons()
-	if self.LINUX then
+	if not self.CAN_USE_SYSTEMFS then
 		return
 	end
 
@@ -82,9 +85,7 @@ function NepgearsyMM:_init_icons()
 end
 
 function NepgearsyMM:_init_menus()
-	if self.LINUX then -- This time not checking if he has the option since we want them to access the menu no matter what
-		-- Loading the menu "old way" since SystemFS doesn't exist for Linux.
-
+	if not self.CAN_USE_SYSTEMFS then
 		MenuHelper:LoadFromJsonFile(self.MenusDirectory .. "0_main.json", NepgearsyMM, NepgearsyMM.Data)
 		MenuHelper:LoadFromJsonFile(self.MenusDirectory .. "friendlist_options.json", NepgearsyMM, NepgearsyMM.Data)
 		MenuHelper:LoadFromJsonFile(self.MenusDirectory .. "scene_options.json", NepgearsyMM, NepgearsyMM.Data)
@@ -93,5 +94,13 @@ function NepgearsyMM:_init_menus()
 
 	for i, v in ipairs(SystemFS:list(self.MenusDirectory)) do
 		MenuHelper:LoadFromJsonFile(self.MenusDirectory .. v, NepgearsyMM, NepgearsyMM.Data)
+	end
+end
+
+function NepgearsyMM:_check_other_mods()
+	self.POSER = false
+
+	if Poser then
+		self.POSER = true
 	end
 end

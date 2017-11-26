@@ -1,8 +1,10 @@
 Hooks:PostHook( MenuSceneManager, "_set_up_templates", "nepmenu_setup_templates", function(self)
 
 	local NHO = NepgearsyMM.Data
-	self._scene_templates.standard.character_pos = Vector3(NHO.NepgearsyMM_Scene_Character_Position_X_Value or 5, NHO.NepgearsyMM_Scene_Character_Position_Y_Value or -45, NHO.NepgearsyMM_Scene_Character_Position_Z_Value or -140)
-	self._scene_templates.standard.character_rot = NHO.NepgearsyMM_Scene_Character_Rotation_Value or -170
+	if not NepgearsyMM.POSER then
+		self._scene_templates.standard.character_pos = Vector3(NHO.NepgearsyMM_Scene_Character_Position_X_Value or 5, NHO.NepgearsyMM_Scene_Character_Position_Y_Value or -45, NHO.NepgearsyMM_Scene_Character_Position_Z_Value or -140)
+		self._scene_templates.standard.character_rot = NHO.NepgearsyMM_Scene_Character_Rotation_Value or -170
+	end
 	self._scene_templates.standard.hide_menu_logo = true
 
 	self._scene_templates.standard.use_character_grab = false
@@ -49,7 +51,7 @@ Hooks:PostHook( MenuSceneManager, "_set_up_templates", "nepmenu_setup_templates"
 	local rand_light_3 = Vector3(random_7, random_8, random_9) * 3
 
 	local o_light_data = NHO and NHO.NepgearsyMM_Scene_Light_Selection_Value
-	
+
 	if o_light_data then
 		if o_light_data == 1 then -- nmm
 			chosen_light_1 = nmml_light_1
@@ -108,7 +110,7 @@ Hooks:PostHook( MenuSceneManager, "set_scene_template", "nepmenu_set_scene_templ
 		--	self._character_unit:set_position(Vector3(NHO.NepgearsyMM_Scene_Character_Position_X_Value or 5, NHO.NepgearsyMM_Scene_Character_Position_Y_Value or -45, NHO.NepgearsyMM_Scene_Character_Position_Z_Value or -140))
 		--end
 
-		if template_data.character_rot then
+		if template_data.character_rot and not NepgearsyMM.POSER then
 			self._character_unit:set_rotation(Rotation(NHO.NepgearsyMM_Scene_Character_Rotation_Value or -170, self._character_pitch))
             self._character_yaw = template_data.character_rot
 		end
