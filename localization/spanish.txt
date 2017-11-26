@@ -72,8 +72,8 @@
 	"NepgearsyMM_Scene_Light_Selection_Default" : "Luces por defecto",
 	"NepgearsyMM_Scene_Light_Selection_Random" : "Luces Aleatorias",
 	"NepgearsyMM_Scene_Light_Selection_None" : "Luces Normales",
-	"NepgearsyMM_Scene_DisableLightsChanges_Title" : "Disable the light changes",
-	"NepgearsyMM_Scene_DisableLightsChanges_Desc" : "This will disable the changes on lights completely.",
+	"NepgearsyMM_Scene_DisableLightsChanges_Title" : "Deshabilitar los cambios en las luces",
+	"NepgearsyMM_Scene_DisableLightsChanges_Desc" : "Esto deshabilitará totalmente los cambios en las luces.",
 
 	"NepgearsyMM_FriendListOptions_Title" : "Opciones de la Lista de Amigos",
 	"NepgearsyMM_FriendListOptions_Desc" : "Todo lo relacionado con la lista de amigos.",
