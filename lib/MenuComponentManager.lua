@@ -15,6 +15,17 @@ Hooks:PostHook(MenuComponentManager, "mouse_pressed", "NepgearsyMousePressed", f
 	end
 end)
 
+Hooks:PostHook(MenuComponentManager, "mouse_moved", "NepgearsyMouseMoved", function(self, o, x, y)
+	if self._player_profile_gui then
+		local used, pointer = self._player_profile_gui:mouse_moved(o, x, y)
+		wanted_pointer = pointer or wanted_pointer
+
+		if used then
+			return true, wanted_pointer
+		end
+	end
+end)
+
 --Annoyingly overkill returns on mouse released making scroll release not work without this :c
 Hooks:PreHook(MenuComponentManager, "mouse_released", "NepgearsyCreateFriendsGUI", function(self, o, button, x, y)
 	if self._friends_gui then

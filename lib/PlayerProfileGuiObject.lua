@@ -831,12 +831,55 @@ function PlayerProfileGuiObject:mouse_pressed(button, x, y)
 			managers.menu_component:post_event("menu_enter")
 			self._current_page = "skills"
 			self:refresh_data(self._current_page)
+			return true
 		end
 
 		if self._button_inventory and self._button_inventory:visible() and self._button_inventory:inside(x, y) then
 			managers.menu_component:post_event("menu_enter")
 			self._current_page = "inventory"
 			self:refresh_data(self._current_page)
+			return true
 		end
+	end
+end
+
+function PlayerProfileGuiObject:mouse_moved(o, x, y)
+	local pointer = "arrow"
+	local used = false
+	local btn_skills_bg_rect = self._button_skill:child("background_btn_skill")
+	local btn_inventory_bg_rect = self._button_inventory:child("background_btn_inventory")
+
+	if self._button_skill and self._button_skill:visible() and self._button_skill:inside(x, y) then
+		used = true
+		pointer = "link"
+
+		if not self._button_skill_pointed then
+			self._button_skill_pointed = true
+			managers.menu_component:post_event("highlight")
+			btn_skills_bg_rect:set_alpha(0.3)
+			return used, pointer
+		end
+	end
+
+	if not self._button_skill:inside(x, y) then
+		self._button_skill_pointed = false
+		btn_skills_bg_rect:set_alpha(0.1)
+	end
+
+	if self._button_inventory and self._button_inventory:visible() and self._button_inventory:inside(x, y) then
+		used = true
+		pointer = "link"
+
+		if not self._button_inventory_pointed then
+			self._button_inventory_pointed = true
+			managers.menu_component:post_event("highlight")
+			btn_inventory_bg_rect:set_alpha(0.3)
+			return used, pointer
+		end
+	end
+
+	if not self._button_inventory:inside(x, y) then
+		self._button_inventory_pointed = false
+		btn_inventory_bg_rect:set_alpha(0.1)
 	end
 end
