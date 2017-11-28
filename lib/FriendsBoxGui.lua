@@ -398,12 +398,6 @@ function FriendsBoxGui:update_friends()
 		}
 
 		local loadout = {
-			character = {
-				item_texture = user:rich_presence("loadout_character_texture")
-			},
-			mask = {
-				item_texture = user:rich_presence("loadout_character_mask")
-			},
 			primary = {
 				info_text = user:rich_presence("loadout_primary_name"),
 				item_texture = user:rich_presence("loadout_primary_texture"),
@@ -417,20 +411,16 @@ function FriendsBoxGui:update_friends()
 				info_text_color = user:rich_presence("loadout_secondary_rarity_text_color")
 			},
 			melee_weapon = {
-				info_text = user:rich_presence("loadout_melee_name"),
 				item_texture = user:rich_presence("loadout_melee_texture")
 			},
 			grenade = {
-				info_text = user:rich_presence("loadout_throwable_name"),
 				item_texture = user:rich_presence("loadout_throwable_texture")
 			},
 			deployable = {
-				info_text = user:rich_presence("loadout_deployable_name"),
 				item_texture = user:rich_presence("loadout_deployable_texture")
 			}
 		}
 
-		local has_nepgearsy_menu = user:rich_presence("has_nepgearsy_menu")
 		local personal_description = user:rich_presence("personal_description")
 
 		local s = string.find(rich_presence_status, "\n")
@@ -493,7 +483,6 @@ function FriendsBoxGui:update_friends()
 		user_tbl.infamy = infamy
 		user_tbl.loadout = loadout
 		user_tbl.skill_points_invested = skill_points_invested
-		user_tbl.has_nepgearsy_menu = has_nepgearsy_menu
 		user_tbl.personal_description = personal_description
 	end
 
@@ -581,7 +570,6 @@ function FriendsBoxGui:mouse_pressed(button, x, y)
 					loadout = self._users[user_panel:name()].loadout,
 					current_lobby = self._friend_action_user:lobby(),
 					skill_points_invested = self._users[user_panel:name()].skill_points_invested,
-					has_nepgearsy_menu = self._users[user_panel:name()].has_nepgearsy_menu,
 					personal_description = self._users[user_panel:name()].personal_description
 				}
 

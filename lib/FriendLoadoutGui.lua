@@ -44,10 +44,9 @@ function FriendLoadoutGui:init(ws, full_ws, steam_id)
         self._player.loadout = self._steam_data.loadout
         self._player.lobby = self._steam_data.current_lobby
         self._player.skill_points_invested = self._steam_data.skill_points_invested
-        self._player.has_nepgearsy_menu = self._steam_data.has_nepgearsy_menu
         self._player.personal_description = self._steam_data.personal_description
 
-        if self._player.has_nepgearsy_menu == "1" then
+        if self._player.loadout.primary.info_text ~= "" then
             self._has_nepgearsy_menu = true
         end
 
@@ -247,29 +246,6 @@ function FriendLoadoutGui:_setup_profile()
     make_fine_text(sub_state)
     sub_state:set_left(avatar_square:right() + padding)
     sub_state:set_top(main_state:bottom() + 15)
-
-    if not self._has_nepgearsy_menu then
-        return
-    end
-
-    local current_character = profile_panel:bitmap({
-        name ="player_character",
-        texture = self._player.loadout.character.item_texture,
-        h = 64,
-        w = 64
-    })
-
-    current_character:set_bottom(profile_panel:bottom() - 20)
-
-    local current_mask = profile_panel:bitmap({
-        name = "player_mask",
-        texture = self._player.loadout.mask.item_texture,
-        h = 64,
-        w = 64
-    })
-    current_mask:set_bottom(profile_panel:bottom() - 20)
-    current_mask:set_right(profile_panel:right() - 20)
-    current_character:set_right(current_mask:left() - 10)
 end
 
 function FriendLoadoutGui:_setup_loadout()
