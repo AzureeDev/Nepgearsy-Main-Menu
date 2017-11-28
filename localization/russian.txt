@@ -53,8 +53,7 @@
 	"nepmenu_friendlist_button_join_game" : "Присоединиться",
 	"nepmenu_friendlist_button_invite" : "Пригласить",
 	"nepmenu_friendlist_button_send_message" : "Отправить сообщение",
-	"nepmenu_friendlist_button_view_profile" : "Посмотреть профиль",
-	"nepmenu_friendlist_button_view_achievements" : "Посмотреть достижения",
+	"nepmenu_friendlist_button_view_loadout" : "View player profile",
 
 	"NepgearsyMM_SceneOptions_Title" : "Настройки сцены меню",
 	"NepgearsyMM_SceneOptions_Desc" : "Все, что связано со сценой, например, положение персонажа - вращение, свет...",
@@ -74,9 +73,21 @@
 	"NepgearsyMM_Scene_Light_Selection_None" : "Нормальный свет",
 	"NepgearsyMM_Scene_DisableLightsChanges_Title" : "Отключить изменения света",
 	"NepgearsyMM_Scene_DisableLightsChanges_Desc" : "Это полностью отключит изменения света.",
+	"NepgearsyMM_Scene_HideAds_Title" : "Hide the ads panel",
+	"NepgearsyMM_Scene_HideAds_Desc" : "This will hide the main menu ad panel on the bottom right.",
 
 	"NepgearsyMM_FriendListOptions_Title" : "Настройки списка друзей",
 	"NepgearsyMM_FriendListOptions_Desc" : "Всё что со списком друзей.",
 	"NepgearsyMM_FriendList_EnableRepLevel_Title" : "Включить уровень друга",
-	"NepgearsyMM_FriendList_EnableRepLevel_Desc" : "Это добавит текущий уровень друга до его имени. Показывать текущий уровень дурной репутации на данный момент невозможно."
+	"NepgearsyMM_FriendList_EnableRepLevel_Desc" : "Это добавит текущий уровень друга до его имени. Показывать текущий уровень дурной репутации на данный момент невозможно.",
+
+	"NepgearsyMM_PlayerProfile_Header" : "Player profile",
+	"NepgearsyMM_Description_Header" : "Description",
+	"NepgearsyMM_Loadout_Header" : "Loadout",
+	"NepgearsyMM_Skills_Header" : "Skills",
+	"NepgearsyMM_Button_Steam_Profile" : "Steam Profile",
+	"NepgearsyMM_Button_Steam_Achievements" : "Achievements",
+	"NepgearsyMM_Description_Setup" : "You can setup a custom description here. It will sync with the other users of the mod!\nTo do that, go into PAYDAY 2/mods/saves/NepgearsyMM_PersonalDescription.txt\n\nThen open the file, and put whatever you want in it.",
+	"NepgearsyMM_Loadout_Error" : "$name is not in-game or doesn't have Nepgearsy Main Menu.",
+	"NepgearsyMM_Description_Error" : "$name is not in-game, doesn't have Nepgearsy Main Menu or any description."
 }

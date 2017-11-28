@@ -14,14 +14,15 @@ function FriendsBoxGui:init(ws)
 	self._users = {}
 	self._steam_retrieved_infamy = -1
 	self._steam_retrieved_level = -1
+	self._steam_data_user = {}
 
 	self._default_font_size = tweak_data.menu.pd2_small_font_size
 	self._font = tweak_data.menu.pd2_large_font
 	self._font_size = tweak_data.menu.pd2_small_font_size - 5
 	self._topic_state_font_size = 22
-	self._ingame_color = Color("adcc62")
-	self._online_color = Color(0.6, 0.75, 1)
-	self._offline_color = Color("717171")
+	self._ingame_color = Color("90ba3c")
+	self._online_color = Color("57cbde")
+	self._offline_color = Color("898989")
 
 	self._options_exists = false
 
@@ -380,11 +381,57 @@ function FriendsBoxGui:update_friends()
 		local main_state, sub_state = nil
 		local state = user:state()
 		local rich_presence_status = user:rich_presence("status")
+		local full_rich_presence_status = user:rich_presence("status")
 		local rich_presence_level = user:rich_presence("level")
-		local rich_presence_rank = user:rich_presence("infamy") or nil
+		local rich_presence_rank = user:rich_presence("infamy")
+		local rich_presence_loadout = user:rich_presence("loadout_data")
 		local payday1 = rich_presence_level == ""
 		local playing_this = user:playing_this()
 		local infamy = 0
+
+		local skill_points_invested = {
+			mastermind = user:rich_presence("amount_skillpoints_mastermind"),
+			enforcer = user:rich_presence("amount_skillpoints_enforcer"),
+			technician = user:rich_presence("amount_skillpoints_technician"),
+			ghost = user:rich_presence("amount_skillpoints_ghost"),
+			fugitive = user:rich_presence("amount_skillpoints_fugitive")
+		}
+
+		local loadout = {
+			character = {
+				item_texture = user:rich_presence("loadout_character_texture")
+			},
+			mask = {
+				item_texture = user:rich_presence("loadout_character_mask")
+			},
+			primary = {
+				info_text = user:rich_presence("loadout_primary_name"),
+				item_texture = user:rich_presence("loadout_primary_texture"),
+				item_bg_texture = user:rich_presence("loadout_primary_rarity"),
+				info_text_color = user:rich_presence("loadout_primary_rarity_text_color")
+			},
+			secondary = {
+				info_text = user:rich_presence("loadout_secondary_name"),
+				item_texture = user:rich_presence("loadout_secondary_texture"),
+				item_bg_texture = user:rich_presence("loadout_secondary_rarity"),
+				info_text_color = user:rich_presence("loadout_secondary_rarity_text_color")
+			},
+			melee_weapon = {
+				info_text = user:rich_presence("loadout_melee_name"),
+				item_texture = user:rich_presence("loadout_melee_texture")
+			},
+			grenade = {
+				info_text = user:rich_presence("loadout_throwable_name"),
+				item_texture = user:rich_presence("loadout_throwable_texture")
+			},
+			deployable = {
+				info_text = user:rich_presence("loadout_deployable_name"),
+				item_texture = user:rich_presence("loadout_deployable_texture")
+			}
+		}
+
+		local has_nepgearsy_menu = user:rich_presence("has_nepgearsy_menu")
+		local personal_description = user:rich_presence("personal_description")
 
 		local s = string.find(rich_presence_status, "\n")
 
@@ -439,10 +486,15 @@ function FriendsBoxGui:update_friends()
 		user_tbl.user = user
 		user_tbl.main_state = main_state
 		user_tbl.sub_state = sub_state
+		user_tbl.f_sub_state = full_rich_presence_status
 		user_tbl.lobby = user:lobby()
 		user_tbl.level = rich_presence_level
 		user_tbl.payday1 = payday1
 		user_tbl.infamy = infamy
+		user_tbl.loadout = loadout
+		user_tbl.skill_points_invested = skill_points_invested
+		user_tbl.has_nepgearsy_menu = has_nepgearsy_menu
+		user_tbl.personal_description = personal_description
 	end
 
 	self._canvas:clear()
@@ -487,42 +539,13 @@ function FriendsBoxGui:mouse_pressed(button, x, y)
 		return
 	end
 
-	if self._friend_action_gui and self._friend_action_gui:visible() and self._friend_action_gui:in_info_area_focus(x, y) then
-		if button == Idstring("0") or button == Idstring("1") or button == Idstring("2") then
-			local focus_btn_id = self._friend_action_gui:get_focus_button_id()
+	if self:in_info_area_focus(x, y) and button == Idstring("0") or self:in_info_area_focus(x, y) and button == Idstring("1") then
+		--if self._friend_action_gui then
+			--if self._friend_action_gui:visible() and self._friend_action_gui:in_info_area_focus(x, y) then
+			--	return true
+		--	end
+	--	end
 
-			print("get_focus_button_id()", focus_btn_id)
-
-			if focus_btn_id == "join_game" then
-				print(" join game ", self._friend_action_user, self._friend_action_user:lobby())
-
-				if self._friend_action_user:lobby() then
-					managers.network.matchmake:join_server_with_check(self._friend_action_user:lobby():id())
-				end
-			elseif focus_btn_id == "message" then
-				self._friend_action_user:open_overlay("chat")
-			elseif focus_btn_id == "view_profile" then
-				self._friend_action_user:open_overlay("steamid")
-			elseif focus_btn_id == "view_achievements" then
-				self._friend_action_user:open_overlay("achievements")
-			elseif focus_btn_id == "view_stats" then
-				self._friend_action_user:open_overlay("stats")
-			elseif focus_btn_id == "view_character" then
-			elseif focus_btn_id == "invite" then
-				print("send invite")
-
-				if managers.network.matchmake.lobby_handler then
-					self._friend_action_user:invite(managers.network.matchmake.lobby_handler:id())
-				end
-			end
-
-			self:_hide_friend_action_user()
-		end
-
-		return true
-	end
-
-	if self:in_info_area_focus(x, y) and button == Idstring("0") then
 		local result
 		if button == Idstring("0") then
 			if self._scroll:mouse_pressed(button, x, y) then
@@ -547,10 +570,25 @@ function FriendsBoxGui:mouse_pressed(button, x, y)
 			if self._friend_action_user ~= self._users[user_panel:name()].user then
 				self._friend_action_user = self._users[user_panel:name()].user
 
+				self._steam_data_user = {
+					steam_id = self._friend_action_user:id(),
+					name = self._friend_action_user:name(),
+					main_state = self._users[user_panel:name()].main_state,
+					sub_state = self._users[user_panel:name()].sub_state,
+					f_sub_state = self._users[user_panel:name()].f_sub_state,
+					level = self._users[user_panel:name()].level,
+					infamy = self._users[user_panel:name()].infamy,
+					loadout = self._users[user_panel:name()].loadout,
+					current_lobby = self._friend_action_user:lobby(),
+					skill_points_invested = self._users[user_panel:name()].skill_points_invested,
+					has_nepgearsy_menu = self._users[user_panel:name()].has_nepgearsy_menu,
+					personal_description = self._users[user_panel:name()].personal_description
+				}
+
 				self:_create_friend_action_gui_by_user(self._users[user_panel:name()])
 
-				x = x + 16
-				y = y - 16
+				x = self._scroll_panel:right() + 25
+				y = self._scroll_panel:top() + 217
 
 				--if (self:x() + self:w()) - 20 < x + self._friend_action_gui:w() then
 				--	x = ((self:x() + self:w()) - 20) - self._friend_action_gui:w()
@@ -567,6 +605,40 @@ function FriendsBoxGui:mouse_pressed(button, x, y)
 
 			return true
 		end
+	end
+
+	if self._friend_action_gui and self._friend_action_gui:visible() and self._friend_action_gui:in_info_area_focus(x, y) then
+		if button == Idstring("0") then
+			local focus_btn_id = self._friend_action_gui:get_focus_button_id()
+
+			print("get_focus_button_id()", focus_btn_id)
+
+			if focus_btn_id == "join_game" then
+				print(" join game ", self._friend_action_user, self._friend_action_user:lobby())
+
+				if self._friend_action_user:lobby() then
+					managers.network.matchmake:join_server_with_check(self._friend_action_user:lobby():id())
+				end
+			elseif focus_btn_id == "message" then
+				self._friend_action_user:open_overlay("chat")
+			elseif focus_btn_id == "view_profile" then
+			elseif focus_btn_id == "view_achievements" then
+			elseif focus_btn_id == "view_stats" then
+				self._friend_action_user:open_overlay("stats")
+			elseif focus_btn_id == "view_loadout" then
+				managers.menu:open_node("friend_loadout")
+			elseif focus_btn_id == "invite" then
+				print("send invite")
+
+				if managers.network.matchmake.lobby_handler then
+					self._friend_action_user:invite(managers.network.matchmake.lobby_handler:id())
+				end
+			end
+
+			self:_hide_friend_action_user()
+		end
+
+		return true
 	end
 	self:_hide_friend_action_user()
 
@@ -626,6 +698,7 @@ function FriendsBoxGui:_create_friend_action_gui_by_user(user_data)
 
 	local user = user_data.user
 	local offline = user_data.main_state == "offline"
+	local ingame = user_data.main_state == "ingame"
 	local data = {button_list = {}}
 	local my_lobby_id = managers.network.matchmake.lobby_handler and managers.network.matchmake.lobby_handler:id()
 	local user_lobby_id = user:lobby() and user:lobby():id()
@@ -655,19 +728,12 @@ function FriendsBoxGui:_create_friend_action_gui_by_user(user_data)
 
 	table.insert(data.button_list, chat_button)
 
-	local profile_button = {
-		text = managers.localization:text("nepmenu_friendlist_button_view_profile"),
-		id_name = "view_profile"
+	local view_loadout = {
+		text = managers.localization:text("nepmenu_friendlist_button_view_loadout"),
+		id_name = "view_loadout"
 	}
 
-	table.insert(data.button_list, profile_button)
-
-	local achievements_button = {
-		text = managers.localization:text("nepmenu_friendlist_button_view_achievements"),
-		id_name = "view_achievements"
-	}
-
-	table.insert(data.button_list, achievements_button)
+	table.insert(data.button_list, view_loadout)
 
 	data.focus_button = 1
 	self._friend_action_gui = TextBoxGui:new(self._ws, nil, nil, data, {

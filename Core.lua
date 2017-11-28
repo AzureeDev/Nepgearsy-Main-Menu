@@ -1,6 +1,8 @@
 NepgearsyMM = NepgearsyMM or class()
 
 NepgearsyMM.SavePath = SavePath .. "NepgearsyMM_Preferences.txt"
+NepgearsyMM.DescInfoPath = SavePath .. "NepgearsyMM_PersonalDescription.txt"
+NepgearsyMM.DescInfo = ""
 NepgearsyMM.AssetsDirectory = ModPath .. "assets/NepgearsyMM/"
 NepgearsyMM.SoftAssetsDirectory = "assets/NepgearsyMM/"
 NepgearsyMM.MenusDirectory = ModPath .. "menu/"
@@ -18,6 +20,7 @@ NepgearsyMM.CAN_USE_SYSTEMFS = false
 function NepgearsyMM:init()
 	self:_check_special_variables()
 	self:Load()
+	self:LoadDescriptionFile()
 	self:_init_icons()
 	self:_init_menus()
 	self:_check_other_mods()
@@ -36,7 +39,7 @@ function NepgearsyMM:Load()
 	if file then
 		for k, v in pairs(json.decode(file:read("*all")) or {}) do
 			if k then
-				NepgearsyMM.Data[k] = v
+				self.Data[k] = v
 			end
 		end
 		file:close()
@@ -47,9 +50,19 @@ function NepgearsyMM:Save()
 	if file.DirectoryExists( SavePath ) then
 		local file = io.open( self.SavePath , "w+")
 		if file then
-			file:write(json.encode(NepgearsyMM.Data))
+			file:write(json.encode(self.Data))
 			file:close()
 		end
+	end
+end
+
+function NepgearsyMM:LoadDescriptionFile()
+	local file = io.open( self.DescInfoPath , "r")
+	if file then
+		local content = file:read("*all")
+		self.DescInfo = content
+	else
+		io.open( self.DescInfoPath , "w+")
 	end
 end
 

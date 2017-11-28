@@ -7,7 +7,7 @@ function PlayerProfileGuiObject:init(ws)
 	self._inventory_panel = inventory_panel
 	self._panel:set_w(400)
 	self._panel:set_h(250)
-
+	self._choose_self_profile = false
 	self._current_page = NepgearsyMM and NepgearsyMM.Data["current_profile_page_selected"] or "skills"
 	self:refresh_data(self._current_page)
 
@@ -827,6 +827,13 @@ function PlayerProfileGuiObject:mouse_pressed(button, x, y)
 	end
 
 	if button == Idstring("0") then
+
+		if self._panel:inside(x, y) and not self._button_skill:inside(x, y) and not self._button_inventory:inside(x, y) then
+			managers.menu_component:post_event("menu_enter")
+			managers.menu:open_node("friend_loadout")
+			return true
+		end
+
 		if self._button_skill and self._button_skill:visible() and self._button_skill:inside(x, y) then
 			managers.menu_component:post_event("menu_enter")
 			self._current_page = "skills"
@@ -848,6 +855,30 @@ function PlayerProfileGuiObject:mouse_moved(o, x, y)
 	local used = false
 	local btn_skills_bg_rect = self._button_skill:child("background_btn_skill")
 	local btn_inventory_bg_rect = self._button_inventory:child("background_btn_inventory")
+	local rect_panel = self._panel:child("background")
+	local profile_pointed = false
+
+	if not self._panel:inside(x, y) then
+		profile_pointed = false
+		rect_panel:set_color(Color.black)
+		rect_panel:set_alpha(0.4)
+		self._choose_self_profile = false
+	end
+
+	if self._panel and self._panel:visible() and self._panel:inside(x, y) then
+		if not self._button_skill:inside(x, y) and not self._button_inventory:inside(x, y) then
+			used = true
+			pointer = "link"
+
+			if not profile_pointed then
+				profile_pointed = true
+				self._choose_self_profile = true
+				rect_panel:set_color(Color.white)
+				rect_panel:set_alpha(0.1)
+				return used, pointer
+			end
+		end
+	end
 
 	if self._button_skill and self._button_skill:visible() and self._button_skill:inside(x, y) then
 		used = true

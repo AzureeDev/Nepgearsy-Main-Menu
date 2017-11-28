@@ -83,6 +83,15 @@
 			"callback" : "NepgearsyMM_Value_Bool_Callback",
 			"value" : "NepgearsyMM_Scene_DisableLightsChanges_Value",
 			"default_value" : false
+		},
+		{
+			"type" : "toggle",
+			"id" : "NepgearsyMM_Scene_HideAds",
+			"title" : "NepgearsyMM_Scene_HideAds_Title",
+			"description" : "NepgearsyMM_Scene_HideAds_Desc",
+			"callback" : "NepgearsyMM_Value_Bool_Callback",
+			"value" : "NepgearsyMM_Scene_HideAds_Value",
+			"default_value" : false
 		}
 	]
 }

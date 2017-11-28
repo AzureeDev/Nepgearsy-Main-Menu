@@ -17,3 +17,9 @@ Hooks:PostHook( NewHeistsGui, "init", "nepmenu_post_init_newheists", function(se
 		end
 	end
 end)
+
+Hooks:PostHook( NewHeistsGui, "set_enabled", "nepmenu_post_disable_ads", function(self, enabled)
+	if NepgearsyMM and NepgearsyMM.Data["NepgearsyMM_Scene_HideAds_Value"] then
+		self._content_panel:set_visible(false)
+	end
+end)
