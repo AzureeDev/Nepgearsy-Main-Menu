@@ -81,13 +81,13 @@
 	"NepgearsyMM_FriendList_EnableRepLevel_Title" : "Habilitar los niveles de Reputación",
 	"NepgearsyMM_FriendList_EnableRepLevel_Desc" : "Esto añadirá el nivel actual de un jugador antes de su nombre. Mostrar su nivel de infamia no es posible en este momento.",
 
-	"NepgearsyMM_PlayerProfile_Header" : "Player profile",
-	"NepgearsyMM_Description_Header" : "Description",
-	"NepgearsyMM_Loadout_Header" : "Loadout",
-	"NepgearsyMM_Skills_Header" : "Skills",
-	"NepgearsyMM_Button_Steam_Profile" : "Steam Profile",
-	"NepgearsyMM_Button_Steam_Achievements" : "Achievements",
-	"NepgearsyMM_Description_Setup" : "You can setup a custom description here. It will sync with the other users of the mod!\nTo do that, go into PAYDAY 2/mods/saves/NepgearsyMM_PersonalDescription.txt\n\nThen open the file, and put whatever you want in it.",
-	"NepgearsyMM_Loadout_Error" : "$name is not in-game or doesn't have Nepgearsy Main Menu.",
-	"NepgearsyMM_Description_Error" : "$name is not in-game, doesn't have Nepgearsy Main Menu or any description."
+	"NepgearsyMM_PlayerProfile_Header" : "Perfil del Jugador",
+	"NepgearsyMM_Description_Header" : "Descripción",
+	"NepgearsyMM_Loadout_Header" : "Equipamiento",
+	"NepgearsyMM_Skills_Header" : "Habilidades",
+	"NepgearsyMM_Button_Steam_Profile" : "Perfil de Steam",
+	"NepgearsyMM_Button_Steam_Achievements" : "Logros",
+	"NepgearsyMM_Description_Setup" : "Puedes crear una descripción personalizada aqui. Se sincronizará con otros jugadores que tnegan el mod!\nPara hacerlo, ve a PAYDAY 2/mods/saves/NepgearsyMM_PersonalDescription.txt\n\n Luego abre el archivo y escribe lo que quieras poner ahí",
+	"NepgearsyMM_Loadout_Error" : "$name No está en el juego o no tiene el Menú de Nepgearsy.",
+	"NepgearsyMM_Description_Error" : "$name No está en el juego o no tiene el Menú de Nepgearsy o alguna descripción."
 }
