@@ -83,11 +83,11 @@
 
 	"NepgearsyMM_PlayerProfile_Header" : "Профиль игрока",
 	"NepgearsyMM_Description_Header" : "Описание",
-	"NepgearsyMM_Loadout_Header" : "Загрузка...",
+	"NepgearsyMM_Loadout_Header" : "Снаряжение",
 	"NepgearsyMM_Skills_Header" : " Навыки",
 	"NepgearsyMM_Button_Steam_Profile" : "Стим профиль",
 	"NepgearsyMM_Button_Steam_Achievements" : "Достижения",
 	"NepgearsyMM_Description_Setup" : "Вы можете настроить собственное описание здесь. Оно будет синхронизироваться с другими\nпользователями мода!\nДля этого перейдите в PAYDAY 2/mods/saves/NepgearsyMM_PersonalDescription.txt\n\nЗатем откройте файл и поместите в него все, что хотите.",
 	"NepgearsyMM_Loadout_Error" : "$name не в игре или не имеет Nepgearsy Main Menu.",
-	"NepgearsyMM_Description_Error" : "$name не в игре, не имеет Nepgearsy Main Menu или нет описания."
+	"NepgearsyMM_Description_Error" : "$name не в игре, нет описания или не имеет Nepgearsy Main Menu."
 }
