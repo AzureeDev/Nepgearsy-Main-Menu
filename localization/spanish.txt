@@ -53,7 +53,7 @@
 	"nepmenu_friendlist_button_join_game" : "Unirse a la partida",
 	"nepmenu_friendlist_button_invite" : "Invitar",
 	"nepmenu_friendlist_button_send_message" : "Enviar un mensaje",
-	"nepmenu_friendlist_button_view_loadout" : "View player profile",
+	"nepmenu_friendlist_button_view_loadout" : "Ver perfil del jugador",
 
 	"NepgearsyMM_SceneOptions_Title" : "Opciones de Escena",
 	"NepgearsyMM_SceneOptions_Desc" : "Todo lo relacionado con la escena, como la posición del personaje - rotación, luces...",
@@ -73,8 +73,8 @@
 	"NepgearsyMM_Scene_Light_Selection_None" : "Luces Normales",
 	"NepgearsyMM_Scene_DisableLightsChanges_Title" : "Deshabilitar los cambios en las luces",
 	"NepgearsyMM_Scene_DisableLightsChanges_Desc" : "Esto deshabilitará totalmente los cambios en las luces.",
-	"NepgearsyMM_Scene_HideAds_Title" : "Hide the ads panel",
-	"NepgearsyMM_Scene_HideAds_Desc" : "This will hide the main menu ad panel on the bottom right.",
+	"NepgearsyMM_Scene_HideAds_Title" : "Esconder el panel de anuncios",
+	"NepgearsyMM_Scene_HideAds_Desc" : "Esta opción esconderá el panel de anuncios de la esquina inferior derecha.",
 
 	"NepgearsyMM_FriendListOptions_Title" : "Opciones de la Lista de Amigos",
 	"NepgearsyMM_FriendListOptions_Desc" : "Todo lo relacionado con la lista de amigos.",
