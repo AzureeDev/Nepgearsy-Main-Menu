@@ -55,7 +55,7 @@
 	"nepmenu_friendlist_button_join_game" : "Присоединиться",
 	"nepmenu_friendlist_button_invite" : "Пригласить",
 	"nepmenu_friendlist_button_send_message" : "Отправить сообщение",
-	"nepmenu_friendlist_button_view_loadout" : "View player profile",
+	"nepmenu_friendlist_button_view_loadout" : "Посмотреть профиль игрока",
 
 	"NepgearsyMM_SceneOptions_Title" : "Настройки сцены меню",
 	"NepgearsyMM_SceneOptions_Desc" : "Все, что связано со сценой, например, положение персонажа - вращение, свет...",
