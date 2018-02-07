@@ -9,6 +9,8 @@
 	"NepgearsyMM_LanguageSelection_Russian" : "Русский",
 	"NepgearsyMM_LanguageSelection_Turkish" : "Turkce",
 	"NepgearsyMM_LanguageSelection_Spanish" : "Español",
+	"NepgearsyMM_LanguageSelection_French" : "French",
+	"NepgearsyMM_LanguageSelection_SChinese" : "Simplified Chinese",
 
 	"nepmenu_exp_needed_text" : "$exp EXP POUR LE LEVEL $nextlevel",
 	"nepmenu_exp_max_level_reached" : "NIVEAU MAXIMUM ATTEINT",
