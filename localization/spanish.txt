@@ -15,7 +15,7 @@
 	"nepmenu_exp_needed_text" : "$exp EXP PARA EL NIVEL $nextlevel",
 	"nepmenu_exp_max_level_reached" : "NIVEL MÁXIMO ALCANZADO",
 
-	"nepmenu_infamy_title_0" : "Artacador Novato",
+	"nepmenu_infamy_title_0" : "Atracador Novato",
 	"nepmenu_infamy_title_1" : "Convirtiéndose en Infame",
 	"nepmenu_infamy_title_2" : "Convirtiéndose en Deshonrado",
 	"nepmenu_infamy_title_3" : "Convirtiéndose en Malicioso",
