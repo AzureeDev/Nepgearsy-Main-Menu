@@ -49,10 +49,10 @@
 
 	"nepmenu_friendlist_status_ingame" : "Menu Principal, $state",
 	"nepmenu_friendlist_status_ltp" : "Querendo jogar / trocar itens",
-	"nepmenu_friendlist_status_ingame_joinable" : "Em jogo, capaz de unir-se",
-	"nepmenu_friendlist_status_ingame_not_joinable" : "Em jogo, não é capaz de unir-se",
+	"nepmenu_friendlist_status_ingame_joinable" : "Em jogo, capaz de juntar-se",
+	"nepmenu_friendlist_status_ingame_not_joinable" : "Em jogo, não é capaz de juntar-se",
 
-	"nepmenu_friendlist_button_join_game" : "Unir-se",
+	"nepmenu_friendlist_button_join_game" : "Juntar-se",
 	"nepmenu_friendlist_button_invite" : "Convidar",
 	"nepmenu_friendlist_button_send_message" : "Enviar uma mensagem",
 	"nepmenu_friendlist_button_view_loadout" : "Ver perfil",
