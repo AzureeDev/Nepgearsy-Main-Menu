@@ -59,7 +59,7 @@
 	"nepmenu_friendlist_button_view_loadout" : "Ver perfil",
 
 	"NepgearsyMM_SceneOptions_Title" : "Opções do Menu Scene",
-	"NepgearsyMM_SceneOptions_Desc" : "Coisas relacionadas a cena, como a posição do personagem - rotação, luzes...",
+	"NepgearsyMM_SceneOptions_Desc" : "Configs relacionadas a cena, como a posição do personagem - rotação, luzes...",
 	"NepgearsyMM_Scene_Character_Position_X_Title" : "Posição X",
 	"NepgearsyMM_Scene_Character_Position_X_Desc" : "Posição do personagem no eixo X",
 	"NepgearsyMM_Scene_Character_Position_Y_Title" : "Posição Y",
@@ -77,10 +77,10 @@
 	"NepgearsyMM_Scene_DisableLightsChanges_Title" : "Desativa as mudanças de luz",
 	"NepgearsyMM_Scene_DisableLightsChanges_Desc" : "Desativará as alteraçes de luz completamente.",
 	"NepgearsyMM_Scene_HideAds_Title" : "Esconde o painel de propaganda",
-	"NepgearsyMM_Scene_HideAds_Desc" : "Irá ocultar o painel ad menu principal no canto inferior direito.",
+	"NepgearsyMM_Scene_HideAds_Desc" : "Irá ocultar o painel ADS do menu principal.",
 
 	"NepgearsyMM_FriendListOptions_Title" : "Opções da lista de amigos",
-	"NepgearsyMM_FriendListOptions_Desc" : "Qualquer coisa relacionada a lista de amigos.",
+	"NepgearsyMM_FriendListOptions_Desc" : "Configs relacionadas a lista de amigos.",
 	"NepgearsyMM_FriendList_EnableRepLevel_Title" : "Ativa os níveis de reputação",
 	"NepgearsyMM_FriendList_EnableRepLevel_Desc" : "Irá adicionar o nível atual do jogador antes de seus nomes. Mostrar a infâmia atual só é possível quando você e seus amigos tiverem o mod.",
 
