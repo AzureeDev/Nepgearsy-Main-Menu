@@ -46,7 +46,7 @@
 
 	"nepmenu_spendable_cash_text" : "DINHEIRO PASSIVO",
 	"nepmenu_offshore_cash_text" : "DINHEIRO OFFSHORE",
-	"nepmenu_skill_points_used_text" : "PONTOS DE SKILL USADOS",
+	"nepmenu_skill_points_used_text" : "PONTOS DE SKILL",
 
 	"nepmenu_friendlist_status_ingame" : "Menu Principal, $state",
 	"nepmenu_friendlist_status_ltp" : "Querendo jogar / trocar itens",
