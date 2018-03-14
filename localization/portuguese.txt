@@ -44,7 +44,7 @@
 	"nepmenu_infamy_title_25" : "Tornando-se monstruoso",
 	"nepmenu_infamy_title_hax" : "HAXHAXHAXHAXHAX",
 
-	"nepmenu_spendable_cash_text" : "DINHEIRO PASSIVO",
+	"nepmenu_spendable_cash_text" : "DINHEIRO GASTÁVEL",
 	"nepmenu_offshore_cash_text" : "DINHEIRO OFFSHORE",
 	"nepmenu_skill_points_used_text" : "PONTOS DE SKILL",
 
