@@ -11,6 +11,7 @@
 	"NepgearsyMM_LanguageSelection_Spanish" : "Español",
 	"NepgearsyMM_LanguageSelection_French" : "French",
 	"NepgearsyMM_LanguageSelection_SChinese" : "简体中文",
+	"NepgearsyMM_LanguageSelection_Portuguese" : "Portuguese",
 
 	"nepmenu_exp_needed_text" : "下一等级: $nextlevel;升级还需 $exp 点经验",
 	"nepmenu_exp_max_level_reached" : "已达到等级上限",
