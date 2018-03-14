@@ -50,7 +50,7 @@
 
 	"nepmenu_friendlist_status_ingame" : "Menu Principal, $state",
 	"nepmenu_friendlist_status_ltp" : "Querendo jogar / trocar itens",
-	"nepmenu_friendlist_status_ingame_joinable" : "Em jogo, é possvel juntar-se a partida",
+	"nepmenu_friendlist_status_ingame_joinable" : "Em jogo, é possível juntar-se a partida",
 	"nepmenu_friendlist_status_ingame_not_joinable" : "Em jogo, não é possível juntar-se a partida",
 
 	"nepmenu_friendlist_button_join_game" : "Juntar-se",
