@@ -3,7 +3,7 @@
     "description" : "Muh custom main menu.",
     "author" : "Nepsy",
     "contact" : "id/Nepgearsy",
-    "version" : "1.6.3",
+    "version" : "1.6.4",
     "blt_version" : 2,
     "image" : "nephud.png",
     "color" : "87 0 173",
