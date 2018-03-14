@@ -15,6 +15,7 @@ NepgearsyMM.Localization[4] = ModPath .. "localization/turkish.txt"
 NepgearsyMM.Localization[5] = ModPath .. "localization/spanish.txt"
 NepgearsyMM.Localization[6] = ModPath .. "localization/french.txt"
 NepgearsyMM.Localization[7] = ModPath .. "localization/schinese.txt"
+NepgearsyMM.Localization[8] = ModPath .. "localization/portuguese.txt"
 
 NepgearsyMM.CAN_ADD_FILES = false
 NepgearsyMM.CAN_USE_SYSTEMFS = false

@@ -17,7 +17,8 @@
 				"NepgearsyMM_LanguageSelection_Turkish",
 				"NepgearsyMM_LanguageSelection_Spanish",
 				"NepgearsyMM_LanguageSelection_French",
-				"NepgearsyMM_LanguageSelection_SChinese"
+				"NepgearsyMM_LanguageSelection_SChinese",
+				"NepgearsyMM_LanguageSelection_Portuguese"
 			],
 			"value" : "NepgearsyMM_LanguageSelection_Value",
 			"default_value" : 1
