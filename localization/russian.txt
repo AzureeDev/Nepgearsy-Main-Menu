@@ -11,6 +11,7 @@
 	"NepgearsyMM_LanguageSelection_Spanish" : "Español",
 	"NepgearsyMM_LanguageSelection_French" : "French",
 	"NepgearsyMM_LanguageSelection_SChinese" : "Simplified Chinese",
+	"NepgearsyMM_LanguageSelection_Portuguese" : "Portuguese",
 
 	"nepmenu_exp_needed_text" : "$exp опыта необходимо для получения $nextlevel-ого уровня",
 	"nepmenu_exp_max_level_reached" : "ДОСТИГНУТ МАКСИМАЛЬНЫЙ УРОВЕНЬ",
