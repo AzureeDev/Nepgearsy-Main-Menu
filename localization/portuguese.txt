@@ -45,13 +45,13 @@
 	"nepmenu_infamy_title_hax" : "HAXHAXHAXHAXHAX",
 
 	"nepmenu_spendable_cash_text" : "DINHEIRO PASSIVO",
-	"nepmenu_offshore_cash_text" : "DINHEIRO OFFSHORE",
+	"nepmenu_offshore_cash_text" : "DINHEIRO ATIVO",
 	"nepmenu_skill_points_used_text" : "PONTOS DE SKILL",
 
 	"nepmenu_friendlist_status_ingame" : "Menu Principal, $state",
 	"nepmenu_friendlist_status_ltp" : "Querendo jogar / trocar itens",
-	"nepmenu_friendlist_status_ingame_joinable" : "Em jogo, capaz de juntar-se",
-	"nepmenu_friendlist_status_ingame_not_joinable" : "Em jogo, não é capaz de juntar-se",
+	"nepmenu_friendlist_status_ingame_joinable" : "Em jogo, é possível juntar-se a partida",
+	"nepmenu_friendlist_status_ingame_not_joinable" : "Em jogo, não é possível juntar-se a partida",
 
 	"nepmenu_friendlist_button_join_game" : "Juntar-se",
 	"nepmenu_friendlist_button_invite" : "Convidar",
@@ -59,7 +59,7 @@
 	"nepmenu_friendlist_button_view_loadout" : "Ver perfil",
 
 	"NepgearsyMM_SceneOptions_Title" : "Opções do Menu Scene",
-	"NepgearsyMM_SceneOptions_Desc" : "Coisas relacionadas a cena, como a posição do personagem - rotação, luzes...",
+	"NepgearsyMM_SceneOptions_Desc" : "Configs relacionadas a cena, como a posição do personagem - rotação, luzes...",
 	"NepgearsyMM_Scene_Character_Position_X_Title" : "Posição X",
 	"NepgearsyMM_Scene_Character_Position_X_Desc" : "Posição do personagem no eixo X",
 	"NepgearsyMM_Scene_Character_Position_Y_Title" : "Posição Y",
@@ -77,10 +77,10 @@
 	"NepgearsyMM_Scene_DisableLightsChanges_Title" : "Desativa as mudanças de luz",
 	"NepgearsyMM_Scene_DisableLightsChanges_Desc" : "Desativará as alteraçes de luz completamente.",
 	"NepgearsyMM_Scene_HideAds_Title" : "Esconde o painel de propaganda",
-	"NepgearsyMM_Scene_HideAds_Desc" : "Irá ocultar o painel ad menu principal no canto inferior direito.",
+	"NepgearsyMM_Scene_HideAds_Desc" : "Irá ocultar o painel ADS do menu principal.",
 
 	"NepgearsyMM_FriendListOptions_Title" : "Opções da lista de amigos",
-	"NepgearsyMM_FriendListOptions_Desc" : "Qualquer coisa relacionada a lista de amigos.",
+	"NepgearsyMM_FriendListOptions_Desc" : "Configs relacionadas a lista de amigos.",
 	"NepgearsyMM_FriendList_EnableRepLevel_Title" : "Ativa os níveis de reputação",
 	"NepgearsyMM_FriendList_EnableRepLevel_Desc" : "Irá adicionar o nível atual do jogador antes de seus nomes. Mostrar a infâmia atual só é possível quando você e seus amigos tiverem o mod.",
 
@@ -90,7 +90,7 @@
 	"NepgearsyMM_Skills_Header" : "Habilidades",
 	"NepgearsyMM_Button_Steam_Profile" : "Perfil Steam",
 	"NepgearsyMM_Button_Steam_Achievements" : "Conquistas",
-	"NepgearsyMM_Description_Setup" : "You can setup a custom description here. It will sync with the other users of the mod!\nTo do that, go into PAYDAY 2/mods/saves/NepgearsyMM_PersonalDescription.txt\n\nThen open the file, and put whatever you want in it.",
+	"NepgearsyMM_Description_Setup" : "Você pode criar uma descrição qualquer aqui. Ela será sincronizada com outros usuários do mod!\nPara fazer isso, acesse PAYDAY 2/mods/saves/NepgearsyMM_PersonalDescription.txt\n\nEntão abra o arquivo, e escreva o que quiser nele.",
 	"NepgearsyMM_Loadout_Error" : "$name Não está em jogo ou não possui o Nepgearsy Main Menu.",
-	"NepgearsyMM_Description_Error" : "$name Não está em jogo, não possui o Nepgearsy Main Menu or any description."
+	"NepgearsyMM_Description_Error" : "$name Não está em jogo ou não possui o Nepgearsy Main Menu."
 }
