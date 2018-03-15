@@ -90,7 +90,7 @@
 	"NepgearsyMM_Skills_Header" : "Habilidades",
 	"NepgearsyMM_Button_Steam_Profile" : "Perfil Steam",
 	"NepgearsyMM_Button_Steam_Achievements" : "Conquistas",
-	"NepgearsyMM_Description_Setup" : "You can setup a custom description here. It will sync with the other users of the mod!\nTo do that, go into PAYDAY 2/mods/saves/NepgearsyMM_PersonalDescription.txt\n\nThen open the file, and put whatever you want in it.",
+	"NepgearsyMM_Description_Setup" : "Você pode criar uma descrição qualquer aqui. Ela será sincronizada com outros usuários do mod!\nPara fazer isso, acesse PAYDAY 2/mods/saves/NepgearsyMM_PersonalDescription.txt\n\nEntão abra o arquivo, e escreva o que quiser nele.",
 	"NepgearsyMM_Loadout_Error" : "$name Não está em jogo ou não possui o Nepgearsy Main Menu.",
-	"NepgearsyMM_Description_Error" : "$name Não está em jogo, não possui o Nepgearsy Main Menu or any description."
+	"NepgearsyMM_Description_Error" : "$name Não está em jogo ou não possui o Nepgearsy Main Menu."
 }
