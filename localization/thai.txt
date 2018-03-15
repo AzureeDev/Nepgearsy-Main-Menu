@@ -1,4 +1,4 @@
-﻿{
+{
 	"NepgearsyMM_Title" : "การตั้งค่า Nepgearsy",
 	"NepgearsyMM_Desc" : "ตั้งค่าตามความต้องการที่นี่",
 
@@ -12,6 +12,7 @@
 	"NepgearsyMM_LanguageSelection_French" : "French",
 	"NepgearsyMM_LanguageSelection_SChinese" : "Simplified Chinese",
 	"NepgearsyMM_LanguageSelection_Portuguese" : "Portuguese",
+	"NepgearsyMM_LanguageSelection_Thai" : "Thai",
 
 	"nepmenu_exp_needed_text" : "$exp ค่าประสบการณ์ที่ต้องการเพื่อไปสู่เลเวล $nextlevel",
 	"nepmenu_exp_max_level_reached" : "คุณมีเลเวลสูงสุดแล้ว",

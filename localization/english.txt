@@ -12,6 +12,7 @@
 	"NepgearsyMM_LanguageSelection_French" : "French",
 	"NepgearsyMM_LanguageSelection_SChinese" : "Simplified Chinese",
 	"NepgearsyMM_LanguageSelection_Portuguese" : "Portuguese",
+	"NepgearsyMM_LanguageSelection_Thai" : "Thai",	
 
 	"nepmenu_exp_needed_text" : "$exp EXP NEEDED FOR LEVEL $nextlevel",
 	"nepmenu_exp_max_level_reached" : "MAX LEVEL REACHED",
