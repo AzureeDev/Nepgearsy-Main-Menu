@@ -44,7 +44,7 @@
 	"nepmenu_infamy_title_23" : "Becoming Diabolical",
 	"nepmenu_infamy_title_24" : "Becoming Ferocious",
 	"nepmenu_infamy_title_25" : "Becoming Monstrous",
-	"nepmenu_infamy_title_hax" : "HAXHAXHAXHAXHAX",
+	"nepmenu_infamy_title_hax" : "Becoming Legendary Heister",
 
 	"nepmenu_spendable_cash_text" : "現金",
 	"nepmenu_offshore_cash_text" : "海外口座",
@@ -92,7 +92,7 @@
 	"NepgearsyMM_Skills_Header" : "スキル",
 	"NepgearsyMM_Button_Steam_Profile" : "Steam プロフィール",
 	"NepgearsyMM_Button_Steam_Achievements" : "実績",
-	"NepgearsyMM_Description_Setup" : "カスタム説明文を設定する事が出来ます。このModを導入している他のユーザーと同期されます！\n\nPAYDAY 2/mods/saves/NepgearsyMM_PersonalDescription.txtに移動し、\nそのファイルを開いて好きな説明文を書いてください。",
+	"NepgearsyMM_Description_Setup" : "カスタム説明文を設定する事が出来ます。このModを導入している他のユーザーと同期されます！\n\nPAYDAY 2/mods/saves/NepgearsyMM_PersonalDescription.txtを開き、\n好きな説明文を入力してください。",
 	"NepgearsyMM_Loadout_Error" : "$name はゲーム中でないか、Nepgeary Main Menuを導入していません。",
 	"NepgearsyMM_Description_Error" : "$name はゲーム中でないか、Nepgeary Main Menuを導入していないか、\nまたは説明文を入力していません。"
 }
