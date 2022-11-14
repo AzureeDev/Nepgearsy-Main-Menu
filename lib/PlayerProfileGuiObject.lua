@@ -11,12 +11,6 @@ function PlayerProfileGuiObject:init(ws)
 	self._current_page = NepgearsyMM and NepgearsyMM.Data["current_profile_page_selected"] or "skills"
 	self:refresh_data(self._current_page)
 
-	local infamy_title = {}
-
-	for i = 0, 25 do
-		infamy_title[i] = managers.localization:text("nepmenu_infamy_title_" .. i)
-	end
-
 	self:_init_supposed_skill_points()
 
 	local next_level_data = managers.experience:next_level_data() or {}
@@ -182,24 +176,27 @@ function PlayerProfileGuiObject:init(ws)
 		color = Color(0.5, 0.5, 0.5)
 	})
 
-	local anticrash_infamy_title
+	local player_pool = managers.experience:get_current_prestige_xp()
+	local pool_max = "30000000"
+	local pool_text = ""
 
-	if player_rank > 25 then
-		anticrash_infamy_title = managers.localization:text("nepmenu_infamy_title_hax")
+	if player_pool == pool_max then
+		pool_text = managers.localization:text("nepmenu_pool_max_reached")
 	else
-		anticrash_infamy_title = "\"" .. infamy_title[player_rank] .. "\""
+		pool_text = managers.localization:text("nepmenu_pool_needed_text", {exp = managers.money:add_decimal_marks_to_string(tostring(player_pool)), max = managers.money:add_decimal_marks_to_string(pool_max)})
 	end
 
-	local infamous_title = panel:text({
+	local xp_pool = panel:text({
 		font = font,
-		font_size = font_size,
-		text = anticrash_infamy_title
+		font_size = 15,
+		text = pool_text,
+		color = Color(0.5, 0.5, 0.5)
 	})
 
 	self:_make_fine_text(player_text)
 	self:_make_fine_text(level_text)
 	self:_make_fine_text(current_xp)
-	self:_make_fine_text(infamous_title)
+	self:_make_fine_text(xp_pool)
 
 	level_text:set_left(myavatar:right() + 10)
 	level_text:set_top(myavatar:top())
@@ -210,8 +207,8 @@ function PlayerProfileGuiObject:init(ws)
 	current_xp:set_left(myavatar:right() + 10)
 	current_xp:set_top(player_text:bottom() + 4)
 
-	infamous_title:set_left(myavatar:right() + 10)
-	infamous_title:set_top(current_xp:bottom() + 4)
+	xp_pool:set_left(myavatar:right() + 10)
+	xp_pool:set_top(current_xp:bottom() + 4)
 
 	local current_specialization = managers.skilltree:get_specialization_value("current_specialization")
 	local texture_rect_x = 0
